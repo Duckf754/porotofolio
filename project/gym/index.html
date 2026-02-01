@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitZone Gym & Fitness - Transform Your Body</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<style>
+/* CSS Variables */
+:root {
+    /* Colors */
+    --primary: #10b981;
+    --primary-dark: #059669;
+    --primary-light: #34d399;
+    --primary-bg: #f0fdf4;
+    
+    --secondary: #3b82f6;
+    --secondary-dark: #2563eb;
+    
+    --dark: #1f2937;
+    --dark-light: #374151;
+    --light: #f9fafb;
+    --white: #ffffff;
+    
+    --text: #333333;
+    --text-light: #6b7280;
+    
+    /* Typography */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-xxl: 5rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.5rem;
+    --radius-full: 50%;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 40px rgba(16, 185, 129, 0.2);
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+section {
+    padding: var(--space-xxl) 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+    margin-bottom: var(--space-md);
+    font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--space-sm);
+    color: var(--dark);
+}
+
+.section-title span {
+    color: var(--primary);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto var(--space-xl);
+    font-size: 1.125rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-xl);
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.btn-nav {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.btn-nav:hover {
+    background: var(--primary-dark);
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-xs);
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/asset/image-project/gym.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: var(--space-md);
+}
+
+.hero-title span {
+    color: var(--primary);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    margin-bottom: var(--space-xl);
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-xl);
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+    margin-top: var(--space-xl);
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.feature-card {
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    border: 1px solid #e5e7eb;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-bg);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+}
+
+.feature-icon i {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+/* BMI Calculator */
+.bmi-section {
+    background: var(--primary-bg);
+}
+
+.bmi-calculator {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bmi-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.form-group input {
+    padding: var(--space-sm);
+    border: 2px solid #e5e7eb;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.bmi-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: var(--radius-full);
+    border: 8px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+}
+
+#bmiValue {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+#bmiCategory {
+    font-size: 1.125rem;
+    color: var(--text-light);
+}
+
+.bmi-info ul {
+    list-style: none;
+}
+
+.bmi-info li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xs);
+}
+
+.bmi-info li span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.underweight { background: #3b82f6; }
+.normal { background: var(--primary); }
+.overweight { background: #f59e0b; }
+.obese { background: #ef4444; }
+
+/* Pricing */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.pricing-card {
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    border: 2px solid #e5e7eb;
+    position: relative;
+}
+
+.pricing-card.featured {
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.pricing-card.featured:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: var(--white);
+    padding: var(--space-xs) var(--space-lg);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.pricing-header {
+    margin-bottom: var(--space-lg);
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin: var(--space-md) 0;
+}
+
+.price span {
+    font-size: 1.125rem;
+    color: var(--text-light);
+}
+
+.pricing-features {
+    list-style: none;
+    margin: var(--space-xl) 0;
+    text-align: left;
+}
+
+.pricing-features li {
+    padding: var(--space-sm) 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.pricing-features li.disabled {
+    color: var(--text-light);
+}
+
+.pricing-features li i.fa-check {
+    color: var(--primary);
+}
+
+.pricing-features li i.fa-times {
+    color: #d1d5db;
+}
+
+/* Trainers */
+.trainers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.trainer-card {
+    background: var(--white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.trainer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.trainer-img {
+    width: 150px;
+    height: 150px;
+    border-radius: var(--radius-full);
+    margin: 0 auto var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--dark-light);
+}
+
+.trainer-specialty {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+}
+
+.trainer-bio {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: var(--space-md);
+}
+
+.trainer-cert {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Testimonials */
+.testimonials-section {
+    background: var(--light);
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-content {
+    position: relative;
+    margin-bottom: var(--space-lg);
+}
+
+.testimonial-content i {
+    font-size: 2rem;
+    color: var(--primary);
+    opacity: 0.3;
+    margin-bottom: var(--space-sm);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.author-img {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.author-info h4 {
+    margin-bottom: 0;
+    font-size: 1.125rem;
+}
+
+.author-info p {
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+/* Info Section */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.info-card {
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.info-card h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--dark);
+    margin-bottom: var(--space-lg);
+}
+
+.info-card h3 i {
+    color: var(--primary);
+}
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.schedule-item.highlight {
+    background: var(--primary-bg);
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    border-bottom: none;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.location-info {
+    margin-bottom: var(--space-lg);
+}
+
+.location-info p {
+    margin-bottom: var(--space-xs);
+}
+
+.map-placeholder {
+    height: 200px;
+    background: var(--light);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    border: 2px dashed #d1d5db;
+}
+
+.map-placeholder i {
+    font-size: 3rem;
+    margin-bottom: var(--space-sm);
+    color: var(--primary);
+}
+
+/* FAQ */
+.faq-container {
+    max-width: 800px;
+    margin: var(--space-xl) auto 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: var(--space-sm);
+}
+
+.faq-question {
+    width: 100%;
+    padding: var(--space-lg) 0;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    color: var(--primary);
+}
+
+.faq-question i {
+    transition: var(--transition);
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer.active {
+    max-height: 200px;
+}
+
+.faq-answer p {
+    padding-bottom: var(--space-lg);
+    color: var(--text-light);
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: var(--space-xxl) 0;
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: var(--white);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--space-md);
+}
+
+.cta-content p {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xl);
+    opacity: 0.9;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-lg);
+}
+
+.cta-note {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+/* Footer */
+.footer {
+    background: var(--dark);
+    color: var(--white);
+    padding: var(--space-xxl) 0 var(--space-xl);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.footer-col h3 {
+    color: var(--white);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-lg);
+}
+
+.footer-description {
+    color: #d1d5db;
+    margin-bottom: var(--space-lg);
+}
+
+.social-links {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--dark-light);
+    color: var(--white);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: var(--space-sm);
+}
+
+.footer-col ul li a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+.contact-info li, .hours-info li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: #d1d5db;
+}
+
+.hours-info li {
+    justify-content: space-between;
+}
+
+.contact-info i {
+    color: var(--primary);
+    width: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--dark-light);
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.footer-bottom p {
+    margin-bottom: var(--space-xs);
+}
+
+/* WhatsApp Float */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: var(--shadow-lg);
+    z-index: 999;
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+.whatsapp-float i {
+    font-size: 1.5rem;
+}
+
+.whatsapp-float span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-md);
+    }
+    
+    section {
+        padding: var(--space-xl) 0;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        padding: var(--space-lg);
+        gap: var(--space-md);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .hero-stats {
+        gap: var(--space-lg);
+    }
+    
+    .bmi-calculator {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .pricing-card.featured:hover {
+        transform: translateY(-10px);
+    }
+    
+    .features,
+    .trainers-grid,
+    .testimonials,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-buttons,
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-float span {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 var(--space-lg);
+    }
+    
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .trainers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+</style>
+<body>
+    <!-- Sticky WhatsApp Button for Mobile -->
+    <a href="https://wa.me/6285824390625?text=Halo,%20saya%20ingin%20tanya%20tentang%20FitZone%20Gym" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat Kami</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Ars<span>Fit</span></a>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#trainers">Trainer</a></li>
+                <li><a href="#membership">Membership</a></li>
+                <li><a href="#testimonials">Testimoni</a></li>
+                <li><a href="#contact">Kontak</a></li>
+                <li><a href="https://wa.me/6285824390625?text=Halo,%20saya%20ingin%20tanya%20tentang%20FitZone%20Gym" class="btn-nav" target="_blank">Daftar Sekarang</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Transform Your Body, <span>Transform Your Life</span></h1>
+                <p class="hero-subtitle">Bergabunglah dengan komunitas fitness terbaik di kota. Fasilitas modern, trainer profesional, dan atmosfer yang memotivasi.</p>
+                <div class="hero-buttons">
+                    <a href="#membership" class="btn btn-primary">Lihat Membership</a>
+                    <a href="https://wa.me/6285824390625?text=Halo,%20saya%20ingin%20free%20trial%20di%20FitZone%20Gym" class="btn btn-secondary" target="_blank">Free Trial Gratis</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Member Aktif</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Trainer Profesional</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Jam Operasional</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section why-section">
+        <div class="container">
+            <h2 class="section-title">Mengapa Memilih <span>FitZone?</span></h2>
+            <p class="section-subtitle">Kami menyediakan segala yang Anda butuhkan untuk mencapai tujuan fitness Anda</p>
+            
+            <div class="features">
+                <div class="feature-card slide-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Equipment Modern</h3>
+                    <p>Peralatan fitness terbaru dari Life Fitness, Technogym, dan Hammer Strength untuk hasil maksimal.</p>
+                </div>
+                <div class="feature-card slide-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Trainer Bersertifikat</h3>
+                    <p>Personal trainer dengan sertifikasi NASM, ACE, dan ISSA siap membantu program Anda.</p>
+                </div>
+                <div class="feature-card slide-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Group Classes</h3>
+                    <p>Yoga, Zumba, HIIT, Boxing, Spin Class dengan instruktur berpengalaman.</p>
+                </div>
+                <div class="feature-card slide-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Buka 24/7</h3>
+                    <p>Akses gym kapan saja sesuai jadwal Anda dengan sistem keamanan 24 jam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BMI Calculator -->
+    <section class="section bmi-section">
+        <div class="container">
+            <h2 class="section-title">Cek <span>BMI</span> Anda</h2>
+            <p class="section-subtitle">Ketahui status berat badan ideal Anda dengan kalkulator BMI sederhana</p>
+            
+            <div class="bmi-calculator">
+                <div class="bmi-form">
+                    <div class="form-group">
+                        <label for="height">Tinggi Badan (cm)</label>
+                        <input type="number" id="height" placeholder="Contoh: 170" min="100" max="250">
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Berat Badan (kg)</label>
+                        <input type="number" id="weight" placeholder="Contoh: 65" min="30" max="200">
+                    </div>
+                    <button id="calculateBMI" class="btn btn-primary">Hitung BMI</button>
+                </div>
+                <div class="bmi-result">
+                    <div class="result-circle">
+                        <span id="bmiValue">--</span>
+                        <span id="bmiCategory">Masukkan Data</span>
+                    </div>
+                    <div class="bmi-info">
+                        <h3>Kategori BMI:</h3>
+                        <ul>
+                            <li><span class="underweight"></span> Underweight: &lt; 18.5</li>
+                            <li><span class="normal"></span> Normal: 18.5 - 24.9</li>
+                            <li><span class="overweight"></span> Overweight: 25 - 29.9</li>
+                            <li><span class="obese"></span> Obese: ≥ 30</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans -->
+    <section id="membership" class="section pricing-section">
+        <div class="container">
+            <h2 class="section-title">Paket <span>Membership</span></h2>
+            <p class="section-subtitle">Pilih paket yang sesuai dengan kebutuhan dan target fitness Anda</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card slide-up">
+                    <div class="pricing-header">
+                        <h3>Basic</h3>
+                        <div class="price">299K<span>/bulan</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Akses gym area</li>
+                        <li><i class="fas fa-check"></i> Locker & shower</li>
+                        <li><i class="fas fa-check"></i> Free parking</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Group classes</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Personal trainer</li>
+                    </ul>
+                    <a href="https://wa.me/6285824390625?text=Halo,%20saya%20tertarik%20dengan%20paket%20Basic%20FitZone" class="btn btn-outline" target="_blank">Pilih Paket</a>
+                </div>
+                
+                <div class="pricing-card featured slide-up">
+                    <div class="popular-badge">POPULAR</div>
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="price">499K<span>/bulan</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Semua fitur Basic</li>
+                        <li><i class="fas fa-check"></i> Unlimited group classes</li>
+                        <li><i class="fas fa-check"></i> Sauna & steam room</li>
+                        <li><i class="fas fa-check"></i> 2x PT session/bulan</li>
+                        <li><i class="fas fa-check"></i> Nutrition consultation</li>
+                    </ul>
+                    <a href="https://wa.me/6285824390625?text=Halo,%20saya%20tertarik%20dengan%20paket%20Premium%20FitZone" class="btn btn-primary" target="_blank">Pilih Paket</a>
+                </div>
+                
+                <div class="pricing-card slide-up">
+                    <div class="pricing-header">
+                        <h3>VIP</h3>
+                        <div class="price">899K<span>/bulan</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Semua fitur Premium</li>
+                        <li><i class="fas fa-check"></i> Private locker</li>
+                        <li><i class="fas fa-check"></i> 8x PT session/bulan</li>
+                        <li><i class="fas fa-check"></i> Massage therapy</li>
+                        <li><i class="fas fa-check"></i> Guest pass (2x/bulan)</li>
+                    </ul>
+                    <a href="https://wa.me/6285824390625?text=Halo,%20saya%20tertarik%20dengan%20paket%20VIP%20FitZone" class="btn btn-outline" target="_blank">Pilih Paket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="section trainers-section">
+        <div class="container">
+            <h2 class="section-title">Tim <span>Trainer</span> Kami</h2>
+            <p class="section-subtitle">Didampingi oleh para profesional dengan pengalaman bertahun-tahun</p>
+            
+            <div class="trainers-grid">
+                <div class="trainer-card slide-up">
+                    <div class="trainer-img" style="background-color: #e0f2fe;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Budi Santoso</h3>
+                    <p class="trainer-specialty">Strength & Conditioning</p>
+                    <p class="trainer-bio">Certified NASM dengan 8 tahun pengalaman, spesialis program angkat beban dan functional training.</p>
+                    <div class="trainer-cert">
+                        <span><i class="fas fa-award"></i> NASM, ISSA</span>
+                    </div>
+                </div>
+                
+                <div class="trainer-card slide-up">
+                    <div class="trainer-img" style="background-color: #fce7f3;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Sari Dewi</h3>
+                    <p class="trainer-specialty">Yoga & Pilates</p>
+                    <p class="trainer-bio">Instruktur Yoga Alliance 500hr dengan spesialisasi Vinyasa, Hatha, dan Reformer Pilates.</p>
+                    <div class="trainer-cert">
+                        <span><i class="fas fa-award"></i> Yoga Alliance, ACE</span>
+                    </div>
+                </div>
+                
+                <div class="trainer-card slide-up">
+                    <div class="trainer-img" style="background-color: #dcfce7;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Rizky Pratama</h3>
+                    <p class="trainer-specialty">HIIT & Fat Loss</p>
+                    <p class="trainer-bio">Spesialis program penurunan berat badan dengan pendekatan High Intensity Interval Training.</p>
+                    <div class="trainer-cert">
+                        <span><i class="fas fa-award"></i> ACE, CrossFit L1</span>
+                    </div>
+                </div>
+                
+                <div class="trainer-card slide-up">
+                    <div class="trainer-img" style="background-color: #fef3c7;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Maya Indah</h3>
+                    <p class="trainer-specialty">Nutrition & Wellness</p>
+                    <p class="trainer-bio">Ahli gizi bersertifikasi dengan fokus pada program diet dan wellness untuk gaya hidup sehat.</p>
+                    <div class="trainer-cert">
+                        <span><i class="fas fa-award"></i> Precision Nutrition</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Kata <span>Member</span> Kami</h2>
+            <p class="section-subtitle">Lihat pengalaman langsung dari member FitZone</p>
+            
+            <div class="testimonials">
+                <div class="testimonial-card slide-up">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Setelah 6 bulan di FitZone, berat badan saya turun 12kg! Trainer sangat membantu dan equipment lengkap.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img" style="background-color: #dbeafe;">AD</div>
+                        <div class="author-info">
+                            <h4>Andi Dwi</h4>
+                            <p>Member Premium, 6 bulan</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card slide-up">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Atmosfer gym sangat memotivasi, jam 24 jam sangat membantu saya yang kerja shift malam. Recommended!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img" style="background-color: #fce7f3;">SR</div>
+                        <div class="author-info">
+                            <h4>Sari Rahayu</h4>
+                            <p>Member VIP, 1 tahun</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card slide-up">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Group class Zumba dan Yoga seru banget! Instrukturnya energik dan ramah. Hasilnya badan lebih fit dan bugar.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img" style="background-color: #dcfce7;">DW</div>
+                        <div class="author-info">
+                            <h4>Dewi Wulandari</h4>
+                            <p>Member Basic, 8 bulan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule & Location -->
+    <section class="section info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card slide-up">
+                    <h3><i class="fas fa-clock"></i> Jam Operasional</h3>
+                    <div class="schedule-list">
+                        <div class="schedule-item">
+                            <span>Senin - Jumat</span>
+                            <span>05:00 - 23:00</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Sabtu</span>
+                            <span>06:00 - 22:00</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Minggu</span>
+                            <span>07:00 - 21:00</span>
+                        </div>
+                        <div class="schedule-item highlight">
+                            <span>Member 24/7</span>
+                            <span>Akses penuh</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-card slide-up">
+                    <h3><i class="fas fa-map-marker-alt"></i> Lokasi Kami</h3>
+                    <div class="location-info">
+                        <p><strong>FitZone Gym & Fitness Center</strong></p>
+                        <p>Jl. Sudirman No. 123, Jakarta Selatan</p>
+                        <p>Gedung Plaza FitZone Lt. 3</p>
+                        <p>Parkir luas tersedia</p>
+                    </div>
+                    <div class="map-placeholder">
+                        <i class="fas fa-map"></i>
+                        <p>Google Maps Embed</p>
+                        <small>Lokasi aktual akan ditampilkan di sini</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">Pertanyaan <span>Umum</span></h2>
+            <p class="section-subtitle">Temukan jawaban untuk pertanyaan yang sering diajukan</p>
+            
+            <div class="faq-container">
+                <div class="faq-item slide-up">
+                    <button class="faq-question">
+                        Apakah ada free trial?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ya! Kami menawarkan 3 hari free trial untuk pengalaman pertama. Hubungi kami via WhatsApp untuk booking jadwal free trial.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item slide-up">
+                    <button class="faq-question">
+                        Perlukan pengalaman sebelumnya?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tidak perlu! Kami menerima semua level, dari pemula hingga advanced. Trainer akan menyesuaikan program dengan level dan tujuan Anda.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item slide-up">
+                    <button class="faq-question">
+                        Apa saja fasilitas yang tersedia?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kami memiliki area cardio lengkap, free weights, mesin resistance, studio group class, sauna, steam room, locker, dan shower.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item slide-up">
+                    <button class="faq-question">
+                        Bagaimana pembayaran membership?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pembayaran bisa bulanan, 3 bulanan, atau tahunan. Kami menerima transfer bank, kartu kredit, atau e-wallet.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item slide-up">
+                    <button class="faq-question">
+                        Apakah tersedia program khusus wanita?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ya, kami memiliki area khusus wanita dan program yang dirancang khusus sesuai kebutuhan fitness perempuan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Siap Mulai Perjalanan Fitness Anda?</h2>
+                <p>Bergabunglah dengan komunitas FitZone hari ini dan dapatkan transformasi tubuh yang Anda impikan.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/6285824390625?text=Halo,%20saya%20ingin%20daftar%20member%20FitZone%20Gym" class="btn btn-primary btn-large" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Daftar via WhatsApp
+                    </a>
+                    <a href="tel:+6285824390625" class="btn btn-secondary btn-large">
+                        <i class="fas fa-phone"></i> Telepon Kami
+                    </a>
+                </div>
+                <p class="cta-note">Free trial 3 hari untuk pendaftar pertama!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo">Fit<span>Zone</span></a>
+                    <p class="footer-description">Transform Your Body, Transform Your Life. Gym & Fitness Center terdepan dengan fasilitas modern dan trainer profesional.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#trainers">Trainer Kami</a></li>
+                        <li><a href="#membership">Paket Membership</a></li>
+                        <li><a href="#testimonials">Testimoni</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Kontak Kami</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Sudirman No. 123, Jakarta</li>
+                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
+                        <li><i class="fab fa-whatsapp"></i> +62 858-2439-0625</li>
+                        <li><i class="fas fa-envelope"></i> info@fitzone.id</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Jam Operasional</h3>
+                    <ul class="hours-info">
+                        <li><span>Senin - Jumat</span> <span>05:00 - 23:00</span></li>
+                        <li><span>Sabtu</span> <span>06:00 - 22:00</span></li>
+                        <li><span>Minggu</span> <span>07:00 - 21:00</span></li>
+                        <li><span>Member 24/7</span> <span>Akses Penuh</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 FitZone Gym & Fitness. All rights reserved.</p>
+                <p>Demo Website by Muhammad Arsyad - UI/UX Designer & Front-End Developer</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// DOM Elements
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+const faqQuestions = document.querySelectorAll('.faq-question');
+const calculateBtn = document.getElementById('calculateBMI');
+const heightInput = document.getElementById('height');
+const weightInput = document.getElementById('weight');
+const bmiValue = document.getElementById('bmiValue');
+const bmiCategory = document.getElementById('bmiCategory');
+
+// Mobile Menu Toggle
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    
+    // Animate hamburger icon
+    const spans = menuToggle.querySelectorAll('span');
+    if (navMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+    } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    }
+});
+
+// Close menu when clicking outside on mobile
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            
+            const spans = menuToggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    }
+});
+
+// FAQ Accordion
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isActive = question.classList.contains('active');
+        
+        // Close all other FAQ items
+        faqQuestions.forEach(q => {
+            q.classList.remove('active');
+            q.nextElementSibling.classList.remove('active');
+        });
+        
+        // Toggle current item if it wasn't active
+        if (!isActive) {
+            question.classList.add('active');
+            answer.classList.add('active');
+        }
+    });
+});
+
+// BMI Calculator
+calculateBtn.addEventListener('click', () => {
+    const height = parseFloat(heightInput.value) / 100; // Convert cm to m
+    const weight = parseFloat(weightInput.value);
+    
+    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+        alert('Masukkan tinggi dan berat badan yang valid');
+        return;
+    }
+    
+    const bmi = weight / (height * height);
+    const roundedBMI = bmi.toFixed(1);
+    
+    bmiValue.textContent = roundedBMI;
+    
+    // Determine BMI category
+    let category = '';
+    let color = '';
+    
+    if (bmi < 18.5) {
+        category = 'Underweight';
+        color = '#3b82f6';
+    } else if (bmi < 25) {
+        category = 'Normal';
+        color = '#10b981';
+    } else if (bmi < 30) {
+        category = 'Overweight';
+        color = '#f59e0b';
+    } else {
+        category = 'Obese';
+        color = '#ef4444';
+    }
+    
+    bmiCategory.textContent = category;
+    bmiValue.style.color = color;
+});
+
+// Scroll Animations
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Observe all elements with slide-up class
+document.querySelectorAll('.slide-up').forEach(el => {
+    observer.observe(el);
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            // Close mobile menu if open
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+            
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Sticky WhatsApp button color change on scroll
+window.addEventListener('scroll', () => {
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    const heroSection = document.querySelector('.hero');
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    
+    if (window.scrollY > heroBottom - 100) {
+        whatsappBtn.style.backgroundColor = '#128C7E'; // Darker WhatsApp green
+    } else {
+        whatsappBtn.style.backgroundColor = '#25D366'; // Original WhatsApp green
+    }
+});
+
+// Initialize with some example BMI data
+window.addEventListener('DOMContentLoaded', () => {
+    // Set example values for BMI calculator
+    heightInput.value = '170';
+    weightInput.value = '65';
+    
+    // Trigger BMI calculation on load
+    if (calculateBtn) {
+        calculateBtn.click();
+    }
+    
+    // Add animation delay to elements
+    document.querySelectorAll('.slide-up').forEach((el, index) => {
+        el.style.transitionDelay = `${index * 0.1}s`;
+    });
+});
+
+
+    </script>
+</body>
+</html>

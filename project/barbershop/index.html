@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsyad Barbershop | Potongan Rapi, Percaya Diri Setiap Hari</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables untuk konsistensi warna dan styling */
+        :root {
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2d2d2d;
+            --light-gray: #e0e0e0;
+            --gold: #d4af37;
+            --gold-light: #e6c07b;
+            --gold-dark: #b89e2b;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --shadow-hover: 0 6px 25px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+        }
+
+        /* Reset dan base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility classes */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        .section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-title h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            border-color: #25D366;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            border-color: #128C7E;
+        }
+
+        /* Navbar styles */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo i {
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-md);
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover, 
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            appearance: none;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: var(--gold);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .hamburger span:nth-child(2) {
+            margin: 3px 0;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(26, 26, 26, 0.9)), url('https://placehold.co/1200x800/2d2d2d/white?text=Arsyad+Barbershop') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-md);
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            animation: fadeIn 1.5s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        /* About section */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            align-items: center;
+            text-align: center;
+        }
+
+        .about-text {
+            max-width: 800px;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-top: var(--spacing-sm);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Services section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* Advantages section */
+        .advantages {
+            background-color: var(--dark-gray);
+            color: var(--white);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+
+        .advantage-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .advantage-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* Gallery section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: var(--spacing-md);
+        }
+
+        .gallery-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 250px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        /* Testimonials section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 5rem;
+            color: var(--gold-light);
+            font-family: Georgia, serif;
+            line-height: 1;
+            opacity: 0.3;
+        }
+
+        .testimonial-content {
+            margin-top: var(--spacing-sm);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: var(--spacing-sm);
+            padding-top: var(--spacing-xs);
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-sm);
+            color: var(--black);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+        }
+
+        .author-info p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        /* Contact section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            color: var(--gold);
+            min-width: 30px;
+        }
+
+        .contact-text h3 {
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .contact-text a {
+            color: var(--black);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .contact-text a:hover {
+            color: var(--gold);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--gold);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--light-gray);
+            padding: var(--spacing-md) 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: var(--spacing-sm);
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--medium-gray);
+            color: var(--gold);
+            font-size: 1.3rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                padding: var(--spacing-lg) 0;
+                min-height: auto;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--dark-gray);
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                padding: var(--spacing-md) 0;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 12px 0;
+                font-size: 1.3rem;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hamburger {
+                display: none;
+            }
+            
+            .nav-links {
+                display: flex !important;
+                position: static;
+                background: transparent;
+                box-shadow: none;
+                right: 0 !important;
+            }
+            
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            .hero p {
+                font-size: 1.5rem;
+            }
+            
+            .section {
+                padding: var(--spacing-xl) 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header dengan Navbar Sticky -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-cut"></i>
+                    Arsyad Barbershop
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#advantages">Keunggulan</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
+                    <li><a href="#testimonials">Testimoni</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Potongan Rapi, Percaya Diri Setiap Hari</h1>
+            <p>Barbershop profesional di Kuala Kapuas dengan pelayanan terbaik untuk tampilan yang memukau dan penuh percaya diri</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/6285824390625" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Booking via WhatsApp
+                </a>
+                <a href="#services" class="btn btn-outline">Lihat Layanan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Kami</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Arsyad Barbershop adalah destinasi grooming terkemuka di Kuala Kapuas yang didedikasikan untuk memberikan pengalaman potong rambut dan perawatan wajah terbaik bagi para pria. Didirikan dengan komitmen terhadap kualitas, kebersihan, dan kepuasan pelanggan, kami menggunakan peralatan modern dan teknik terkini untuk menghasilkan tampilan yang memukau.</p>
+                    <p>Setiap pelanggan mendapatkan perhatian khusus sesuai dengan kebutuhan dan preferensi gaya rambut mereka. Dengan lingkungan yang nyaman dan profesional, kami memastikan setiap kunjungan terasa menyenangkan dan hasilnya memuaskan.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://placehold.co/600x400/2d2d2d/white?text=Barber+Profesional" alt="Barber profesional sedang bekerja">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services" style="background-color: #f8f8f8;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-scissors"></i>
+                    </div>
+                    <h3>Haircut</h3>
+                    <p>potongan rambut modern dan klasik yang disesuaikan dengan bentuk wajah dan gaya Anda</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3>Hair Styling</h3>
+                    <p>penataan rambut dengan produk premium untuk hasil yang tahan lama dan natural</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-beard"></i>
+                    </div>
+                    <h3>Beard Trim</h3>
+                    <p>perawatan dan pemangkasan jenggot untuk tampilan yang rapi dan terawat</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <h3>Hair Wash</h3>
+                    <p>pembersihan rambut dan kulit kepala dengan produk khusus untuk kenyamanan maksimal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="section advantages" id="advantages">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: var(--white);">Keunggulan Kami</h2>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Barber Profesional</h3>
+                    <p>Tim barber berpengalaman dengan keahlian teknik potong modern dan klasik</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Alat Bersih & Higienis</h3>
+                    <p>Sterilisasi alat setelah setiap penggunaan untuk kenyamanan dan keamanan Anda</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Lokasi Strategis</h3>
+                    <p>Mudah dijangkau di pusat kota Kuala Kapuas dengan area parkir yang luas</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Pelayanan Ramah</h3>
+                    <p>Suasana nyaman dengan pelayanan yang mengutamakan kepuasan pelanggan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Hasil</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x600/2d2d2d/white?text=Haircut+Modern" alt="Hasil potongan rambut modern">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x600/2d2d2d/white?text=Beard+Trim" alt="Hasil perawatan jenggot">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x600/2d2d2d/white?text=Classic+Cut" alt="Potongan rambut klasik">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x600/2d2d2d/white?text=Fade+Haircut" alt="Potongan rambut fade">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x600/2d2d2d/white?text=Styling" alt="Hasil styling rambut">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x600/2d2d2d/white?text=Beard+Design" alt="Desain jenggot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials" style="background-color: #f8f8f8;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimoni Pelanggan</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Pelayanan di Arsyad Barbershop luar biasa! Barber-nya sangat profesional dan detail dalam setiap potongan. Hasilnya sesuai banget dengan yang aku mau. Pokoknya puas banget dan bakal balik lagi!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Andi Saputra</h4>
+                            <p>Pelanggan Setia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Pertama kali ke sini dan langsung jatuh cinta sama pelayanannya. Tempatnya bersih, barber-nya ramah, dan hasil potongannya rapi banget. Harga terjangkau dengan kualitas premium. Highly recommended!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">B</div>
+                        <div class="author-info">
+                            <h4>Budi Santoso</h4>
+                            <p>Pelanggan Baru</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Saya sering potong rambut di banyak tempat, tapi Arsyad Barbershop juaranya! Mereka benar-benar memperhatikan detail dan nggak buru-buru. Setiap kunjungan selalu memuaskan. Terima kasih tim Arsyad!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Rudi Hermawan</h4>
+                            <p>Pelanggan Reguler</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kontak & Lokasi</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Lokasi</h3>
+                            <p>Jl. Tambun Bungai No. 45, Kuala Kapuas, Kalimantan Tengah, Indonesia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <a href="mailto:arsyadfplh@gmail.com">arsyadfplh@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>WhatsApp</h3>
+                            <a href="https://wa.me/6285824390625">+62 858-2439-0625</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Instagram</h3>
+                            <a href="https://www.instagram.com/arsyad.dev/" target="_blank">@arsyad.dev</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Jam Operasional</h3>
+                            <p>Senin - Sabtu: 09.00 - 21.00 WIB<br>Minggu: 10.00 - 18.00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 style="text-align: center; margin-bottom: 20px;">Kirim Pesan</h3>
+                    <form id="inquiryForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor WhatsApp</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Layanan yang Diinginkan</label>
+                            <select id="service" class="form-control" required>
+                                <option value="">Pilih Layanan</option>
+                                <option value="haircut">Haircut</option>
+                                <option value="styling">Hair Styling</option>
+                                <option value="beard">Beard Trim</option>
+                                <option value="wash">Hair Wash</option>
+                                <option value="package">Paket Lengkap</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan Tambahan</label>
+                            <textarea id="message" class="form-control" placeholder="Tulis pesan atau permintaan khusus Anda di sini..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-whatsapp" style="width: 100%;">
+                            <i class="fab fa-whatsapp"></i> Kirim Pesan WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-cut"></i>
+                    Arsyad Barbershop
+                </a>
+                <div class="social-links">
+                    <a href="https://wa.me/6285824390625" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/arsyad.dev/" aria-label="Instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:arsyadfplh@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p class="copyright">
+                    &copy; 2026 Arsyad Barbershop. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript untuk navigasi dan interaksi
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hamburger menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // Smooth scrolling untuk anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Tutup menu mobile jika terbuka
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active link
+                        document.querySelectorAll('.nav-links a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Form submission handling
+            const inquiryForm = document.getElementById('inquiryForm');
+            if(inquiryForm) {
+                inquiryForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const phone = document.getElementById('phone').value.replace(/\D/g, '');
+                    const service = document.getElementById('service').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Format WhatsApp message
+                    let whatsappMessage = `Halo Arsyad Barbershop, saya ${name} ingin booking layanan ${service}.`;
+                    if(message) {
+                        whatsappMessage += ` ${message}`;
+                    }
+                    
+                    // Format phone number for WhatsApp
+                    const waNumber = phone.startsWith('62') ? phone : `62${phone.substring(1)}`;
+                    
+                    // Open WhatsApp with pre-filled message
+                    window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+                });
+            }
+            
+            // Set active nav link on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                const scrollPos = window.scrollY + 80;
+                
+                sections.forEach(section => {
+                    if (scrollPos >= section.offsetTop && scrollPos < (section.offsetTop + section.offsetHeight)) {
+                        const id = section.getAttribute('id');
+                        document.querySelectorAll('.nav-links a').forEach(link => {
+                            link.classList.remove('active');
+                            if(link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Initialize active link
+            document.querySelector('.nav-links a[href="#home"]').classList.add('active');
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borneo Property | Hunian Premium di Kalimantan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <!-- WhatsApp Sticky Button -->
+    <a href="https://wa.me/6285824390625?text=Halo%20Borneo%20Property,%20saya%20ingin%20konsultasi%20properti" 
+       class="whatsapp-btn" target="_blank" aria-label="Hubungi via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Konsultasi Gratis</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon"><i class="fas fa-building"></i></span>
+                <span class="logo-text">Arsyad<span class="logo-highlight">Property</span></span>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Beranda</a>
+                <a href="#properties" class="nav-link">Properti</a>
+                <a href="#testimonials" class="nav-link">Testimoni</a>
+                <a href="#about" class="nav-link">Tentang Kami</a>
+                <a href="#calculator" class="nav-link">KPR Kalkulator</a>
+                <a href="#contact" class="nav-link">Kontak</a>
+                <a href="https://wa.me/6285824390625" class="nav-cta" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Premium Property Specialist</div>
+            <h1 class="hero-title">Temukan Hunian Impian di <span class="highlight">Kalimantan</span></h1>
+            <p class="hero-subtitle">Kami menghubungkan Anda dengan properti terbaik di kapuas dan sekitarnya. Trusted by 500+ happy families.</p>
+            <div class="hero-cta">
+                <a href="#properties" class="btn btn-primary">Jelajahi Properti</a>
+                <a href="#calculator" class="btn btn-secondary">Hitung KPR</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Properti Terjual</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Kepuasan Klien</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Tahun Pengalaman</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="properties" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Properti Unggulan</h2>
+                <p class="section-subtitle">Pilihan terbaik untuk investasi dan hunian keluarga</p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="rumah">Rumah</button>
+                <button class="filter-btn" data-filter="apartemen">Apartemen</button>
+                <button class="filter-btn" data-filter="ruko">Ruko</button>
+            </div>
+            
+            <!-- Property Grid -->
+            <div class="property-grid" id="propertyGrid">
+                <!-- Property cards will be dynamically filtered -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Detail Modal -->
+    <div id="propertyModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Apa Kata Klien Kami</h2>
+                <p class="section-subtitle">Testimoni dari pembeli yang puas</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Proses pembelian rumah sangat lancar. Agen sangat profesional dan membantu dari awal hingga deal. Terima kasih Borneo Property!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AB</div>
+                        <div class="author-info">
+                            <h4>Ahmad Budiman</h4>
+                            <p>Pembeli Rumah di Balikpapan Baru</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Investasi ruko melalui Borneo Property memberikan return yang excellent. Lokasi strategis dan harga kompetitif."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SR</div>
+                        <div class="author-info">
+                            <h4>Sari Ratnasari</h4>
+                            <p>Investor Properti</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"Pelayanan sangat memuaskan. Apartemen yang saya beli sesuai dengan ekspektasi dan dokumen lengkap. Recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DW</div>
+                        <div class="author-info">
+                            <h4>Dewi Wulandari</h4>
+                            <p>Pembeli Apartemen City View</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Agent Profile -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tentang Kami</h2>
+                <p class="section-subtitle">Profesional di bidang properti sejak 2028</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Mengapa Memilih Arsyad Property?</h3>
+                    <p>Kami adalah perusahaan properti terpercaya di Kalimantan dengan spesialisasi dalam penjualan rumah, apartemen, dan ruko. Dengan pengalaman lebih dari 10 tahun, kami telah membantu ratusan keluarga menemukan hunian impian mereka.</p>
+                    
+                    <div class="features-list">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Terpercaya & Legal</h4>
+                                <p>Semua properti dengan dokumen lengkap dan proses transaksi aman.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <h4>Pelayanan Personal</h4>
+                                <p>Satu agen untuk satu klien, memastikan pelayanan maksimal.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Lokasi Strategis</h4>
+                                <p>Properti di area berkembang dengan potensi kenaikan harga.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="agent-profile">
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="agent-info">
+                                <h3>Muhammad Arsyad</h3>
+                                <p class="agent-title">Senior Property Consultant</p>
+                            </div>
+                        </div>
+                        <div class="agent-details">
+                            <p><i class="fas fa-certificate"></i> <strong>Pengalaman:</strong> 10+ Tahun</p>
+                            <p><i class="fas fa-home"></i> <strong>Spesialisasi:</strong> Residential & Commercial</p>
+                            <p><i class="fas fa-phone"></i> <strong>Telepon:</strong> (0542) 123-4567</p>
+                            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> arsyad@borneoproperty.id</p>
+                        </div>
+                        <a href="https://wa.me/6285824390625" class="btn btn-primary agent-contact" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KPR Calculator Section -->
+    <section id="calculator" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Kalkulator KPR</h2>
+                <p class="section-subtitle">Hitung estimasi cicilan KPR dengan mudah</p>
+            </div>
+            
+            <div class="calculator-wrapper">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="hargaProperti">Harga Properti (Rp)</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-home"></i>
+                            <input type="number" id="hargaProperti" placeholder="Contoh: 850000000" value="850000000" min="0">
+                        </div>
+                        <div class="input-error" id="hargaError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dp">Uang Muka (DP) (%)</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-percentage"></i>
+                            <input type="number" id="dp" placeholder="Contoh: 20" value="20" min="0" max="100" step="5">
+                        </div>
+                        <div class="range-slider">
+                            <input type="range" id="dpRange" min="10" max="50" value="20" step="5">
+                            <div class="range-labels">
+                                <span>10%</span>
+                                <span>30%</span>
+                                <span>50%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tenor">Tenor (Tahun)</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                                <input type="number" id="tenor" placeholder="Contoh: 15" value="15" min="1" max="30">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bunga">Bunga per Tahun (%)</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-chart-line"></i>
+                                <input type="number" id="bunga" placeholder="Contoh: 8.5" value="8.5" min="0" max="20" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-block" onclick="hitungKPR()">
+                        <i class="fas fa-calculator"></i> Hitung Cicilan
+                    </button>
+                </div>
+                
+                <div class="calculator-result" id="calcResult">
+                    <div class="result-header">
+                        <h3><i class="fas fa-file-invoice-dollar"></i> Hasil Perhitungan</h3>
+                        <p>Estimasi cicilan bulanan KPR Anda</p>
+                    </div>
+                    
+                    <div class="result-details">
+                        <div class="result-item">
+                            <span>Harga Properti</span>
+                            <span id="resultHarga">Rp 850.000.000</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Uang Muka (DP)</span>
+                            <span id="resultDP">Rp 170.000.000</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Jumlah Pinjaman</span>
+                            <span id="resultPinjaman">Rp 680.000.000</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Tenor</span>
+                            <span id="resultTenor">15 Tahun</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Bunga per Tahun</span>
+                            <span id="resultBunga">8.5%</span>
+                        </div>
+                        
+                        <div class="result-total">
+                            <span><strong>Cicilan per Bulan</strong></span>
+                            <span class="total-amount" id="resultCicilan">Rp 6.710.000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="result-cta">
+                        <p>Ingin konsultasi KPR lebih lanjut?</p>
+                        <a href="https://wa.me/6285824390625?text=Halo,%20saya%20ingin%20konsultasi%20tentang%20KPR" 
+                           class="btn btn-success btn-block" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Konsultasi Gratis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Kantor & Kontak Kami</h2>
+                <p class="section-subtitle">Kunjungi kantor kami atau hubungi untuk konsultasi</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Informasi Kontak</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Alamat Kantor</h4>
+                            <p>Jalan, Jl. Pemuda Km. 5,5 No. 36 RT.07 RW.03  <br>Kuala-kapuas, Kalimantan tengah<br>73515</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Jam Operasional</h4>
+                            <p>Senin - Jumat: 08:00 - 17:00 WITA<br>Sabtu: 09:00 - 15:00 WITA<br>Minggu & Hari Libur: Tutup</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telepon & WhatsApp</h4>
+                            <p>+62 858 2439 0625 (WhatsApp)<br>(0542) 123-4567 (Kantor)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@arsyadpropeti.id<br>arsyad@arsyadpropeti.id</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Form Minat Properti</h3>
+                        <form id="inquiryForm">
+                            <div class="form-group">
+                                <input type="text" id="nama" placeholder="Nama Lengkap" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" placeholder="Nomor WhatsApp" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <select id="propertyInterest" required>
+                                    <option value="">Pilih Properti yang Diminati</option>
+                                    <option value="rumah">Rumah</option>
+                                    <option value="apartemen">Apartemen</option>
+                                    <option value="ruko">Ruko</option>
+                                    <option value="lainnya">Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="pesan" placeholder="Pesan atau pertanyaan Anda" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i> Kirim Minat
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.678782986822!2d116.82874297504816!3d-1.2637535356307705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df1493d61e7e43d%3A0xf2e58e5f8a3c8e10!2sJl.%20Jenderal%20Sudirman%2C%20Balikpapan%2C%20Kalimantan%20Timur!5e0!3m2!1sen!2sid!4v1710000000000!5m2!1sen!2sid"
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Lokasi Kantor Borneo Property">
+                        </iframe>
+                    </div>
+                    <div class="map-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Kami siap membantu Anda di kantor atau melalui konsultasi online via WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-building"></i>
+                        <span>Borneo<span>Property</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Spesialis properti premium di Kalimantan. Menghubungkan Anda dengan hunian dan investasi properti terbaik.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/6285824390625" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul class="footer-links">
+                        <li><a href="#properties">Jual Beli Properti</a></li>
+                        <li><a href="#calculator">Konsultasi KPR</a></li>
+                        <li><a href="#about">Property Management</a></li>
+                        <li><a href="#contact">Konsultasi Investasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Perusahaan</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#testimonials">Testimoni</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                        <li><a href="#">Karir</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Kantor Pusat</h4>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Jenderal Sudirman No. 123, Balikpapan</p>
+                        <p><i class="fas fa-phone"></i> (0542) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@borneoproperty.id</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Borneo Property. Hak Cipta Dilindungi.</p>
+                <p>Website oleh <strong>Muhammad Arsyad</strong> - Senior UI/UX Designer & Front-End Developer</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

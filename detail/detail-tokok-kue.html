@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Arsyad Laundry - Website Premium dengan Order Tracking & Loyalty System</title>
+    <meta name="description" content="Case study website Arsyad Laundry dengan sistem order tracking real-time dan loyalty program. Meningkatkan retention customer 150% dalam 3 bulan.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables - Clean Laundry Theme */
+        :root {
+            --primary: #3B82F6; /* Professional Blue */
+            --primary-dark: #2563EB;
+            --primary-light: #93C5FD;
+            --secondary: #10B981; /* Fresh Green */
+            --secondary-dark: #059669;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+            --light-gray: #F1F5F9;
+            --gray: #E2E8F0;
+            --medium-gray: #94A3B8;
+            --dark-gray: #475569;
+            --black: #1E293B;
+            --accent: #F59E0B; /* Golden Yellow */
+            --accent-dark: #D97706;
+            --error: #EF4444;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--off-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 10px 24px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: var(--radius-md);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-white {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            background-color: var(--light-gray);
+        }
+
+        .btn-success {
+            background-color: var(--secondary);
+        }
+
+        .btn-success:hover {
+            background-color: var(--secondary-dark);
+        }
+
+        /* Case Study Section */
+        .case-study {
+            padding: 120px 0 80px;
+            background: var(--off-white);
+        }
+
+        .case-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .case-header h1 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .case-header p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .case-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .case-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+        }
+
+        .case-meta-item i {
+            color: var(--primary);
+        }
+
+        /* Case Image */
+        .case-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .case-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1));
+            z-index: 1;
+        }
+
+        .case-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .case-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Case Content */
+        .case-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .case-section {
+            margin-bottom: 4rem;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .case-section h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .case-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .case-section p {
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-badge {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .tech-badge.green {
+            background: var(--secondary);
+        }
+
+        .tech-badge.green:hover {
+            background: var(--secondary-dark);
+        }
+
+        .tech-badge.yellow {
+            background: var(--accent);
+            color: var(--black);
+        }
+
+        .tech-badge.yellow:hover {
+            background: var(--accent-dark);
+        }
+
+        /* Lists */
+        .challenge-list,
+        .solution-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .challenge-list li,
+        .solution-list li {
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            background: var(--light-gray);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--error);
+            transition: transform 0.3s ease;
+        }
+
+        .challenge-list li:hover,
+        .solution-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .solution-list li {
+            border-left-color: var(--secondary);
+        }
+
+        .challenge-list li strong,
+        .solution-list li strong {
+            color: var(--black);
+            font-family: var(--font-heading);
+        }
+
+        .challenge-list li::before {
+            content: "🧺";
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .solution-list li::before {
+            content: "✨";
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Feature Showcase */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--off-white);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--primary-light);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-top-color: var(--primary);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .feature-card h4 {
+            font-family: var(--font-heading);
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--white) 100%);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--primary);
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: var(--font-heading);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+
+        .author-info h4 {
+            margin: 0;
+            color: var(--black);
+            font-family: var(--font-heading);
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Order Process Visualization */
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 40px;
+            color: var(--medium-gray);
+            font-size: 1.5rem;
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .step-circle {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 4rem 3rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: 4rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+
+        .cta-section h2::after {
+            background-color: var(--white);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Lessons Learned */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .lesson-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .lesson-card::before {
+            content: "🧺";
+            position: absolute;
+            left: 1rem;
+            top: 1.8rem;
+            font-size: 1.2rem;
+        }
+
+        .lesson-card h4 {
+            font-family: var(--font-heading);
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .copyright {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .case-study {
+                padding: 100px 0 60px;
+            }
+
+            .case-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .case-section {
+                padding: 1.5rem;
+            }
+
+            .case-section h2 {
+                font-size: 1.7rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-flow {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .process-step {
+                width: 100%;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .process-step::after {
+                content: '↓';
+                right: auto;
+                left: 35px;
+                top: 80px;
+            }
+
+            .step-circle {
+                margin: 0;
+                flex-shrink: 0;
+            }
+
+            .cta-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .case-meta {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .case-header p {
+                font-size: 1rem;
+            }
+
+            .tech-badge {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .case-section {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        /* Stagger animations for list items */
+        .challenge-list li,
+        .solution-list li {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .challenge-list li:nth-child(1) { animation-delay: 0.1s; }
+        .challenge-list li:nth-child(2) { animation-delay: 0.2s; }
+        .challenge-list li:nth-child(3) { animation-delay: 0.3s; }
+        .challenge-list li:nth-child(4) { animation-delay: 0.4s; }
+        .challenge-list li:nth-child(5) { animation-delay: 0.5s; }
+        .solution-list li:nth-child(1) { animation-delay: 0.1s; }
+        .solution-list li:nth-child(2) { animation-delay: 0.2s; }
+        .solution-list li:nth-child(3) { animation-delay: 0.3s; }
+        .solution-list li:nth-child(4) { animation-delay: 0.4s; }
+        .solution-list li:nth-child(5) { animation-delay: 0.5s; }
+        .solution-list li:nth-child(6) { animation-delay: 0.6s; }
+        .solution-list li:nth-child(7) { animation-delay: 0.7s; }
+
+        /* Special styling for laundry-specific elements */
+        .laundry-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">
+                    <i class="fas fa-tshirt" style="color: var(--primary); margin-right: 8px;"></i>
+                    arsyad<span>Laundry</span>
+                </a>
+                <a href="laundry.html" class="btn">
+                    <i class="fas fa-arrow-left"></i> Lihat Demo Website
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Case Study Content -->
+    <section class="case-study">
+        <div class="container">
+            <!-- Case Header -->
+            <div class="case-header">
+                <h1>Case Study: Arsyad Laundry</h1>
+                <p>Website Premium dengan Order Tracking Real-Time & Loyalty System</p>
+                <div class="case-meta">
+                    <div class="case-meta-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span> 2026</span>
+                    </div>
+                    <div class="case-meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>2 Minggu Development</span>
+                    </div>
+                    <div class="case-meta-item">
+                        <i class="fas fa-tags"></i>
+                        <span>UI/UX Design, Web Development</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Image -->
+            <div class="case-image">
+                <img src="https://images.unsplash.com/photo-1581060357675-9d50b563ad5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Arsyad Laundry Website Interface">
+            </div>
+            
+            <!-- Case Content -->
+            <div class="case-content">
+                <!-- Overview -->
+                <div class="case-section">
+                    <h2><i class="fas fa-clipboard-list" style="margin-right: 10px;"></i>Overview Project</h2>
+                    <p><strong>Arsyad Laundry</strong> adalah layanan laundry premium yang fokus pada kualitas, kecepatan, dan teknologi. Mereka membutuhkan website yang tidak hanya sebagai tempat pemesanan online, tetapi juga sebagai <strong>customer experience platform</strong> yang meningkatkan loyalitas dan retensi pelanggan.</p>
+                    <p>Sebelumnya, pemesanan hanya melalui WhatsApp dan telepon, menyebabkan order yang terlewat dan customer tidak tahu status cucian mereka.</p>
+                </div>
+                
+                <!-- About Client -->
+                <div class="case-section">
+                    <h2><i class="fas fa-user-tie" style="margin-right: 10px;"></i>Profil Klien</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                        <div>
+                            <h4><i class="fas fa-tshirt" style="color: var(--primary); margin-right: 8px;"></i>Nama Bisnis</h4>
+                            <p>Arsyad Laundry Premium</p>
+                        </div>
+                        <div>
+                            <h4><i class="fas fa-industry" style="color: var(--primary); margin-right: 8px;"></i>Industri</h4>
+                            <p>Laundry & Dry Cleaning Services</p>
+                        </div>
+                        <div>
+                            <h4><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 8px;"></i>Lokasi</h4>
+                            <p>Kuala Kapuas, Kalimantan Tengah</p>
+                        </div>
+                        <div>
+                            <h4><i class="fas fa-users" style="color: var(--primary); margin-right: 8px;"></i>Target Market</h4>
+                            <p>Keluarga, profesional, mahasiswa, dan pelaku usaha</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Challenges -->
+                <div class="case-section">
+                    <h2><i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i>Tantangan Bisnis</h2>
+                    <ul class="challenge-list">
+                        <li><strong>Manual Order Process:</strong> Semua pemesanan via WhatsApp/telepon, sering terlewat saat jam sibuk</li>
+                        <li><strong>Customer Anxiety:</strong> Pelanggan tidak tahu status cucian mereka setelah diantar</li>
+                        <li><strong>No Loyalty System:</strong> Tidak ada program untuk mempertahankan pelanggan tetap</li>
+                        <li><strong>Inventory Management:</strong> Sulit melacak stok detergen dan perlengkapan laundry</li>
+                        <li><strong>High Competition:</strong> Banyak laundry konvensional dengan harga lebih murah</li>
+                    </ul>
+                </div>
+                
+                <!-- Solutions -->
+                <div class="case-section">
+                    <h2><i class="fas fa-lightbulb" style="margin-right: 10px;"></i>Solusi yang Diterapkan</h2>
+                    <ul class="solution-list">
+                        <li><strong>Real-Time Order Tracking:</strong> Sistem tracking seperti Gojek yang memperlihatkan status cucian dari pickup sampai delivery</li>
+                        <li><strong>Integrated Booking System:</strong> Pemesanan online 24/7 dengan pilihan jadwal pickup & delivery</li>
+                        <li><strong>Loyalty Points System:</strong> Program poin yang bisa ditukar dengan diskon atau layanan gratis</li>
+                        <li><strong>Digital Invoice & Payment:</strong> Invoice otomatis dan pembayaran via transfer, QRIS, atau e-wallet</li>
+                        <li><strong>Inventory Management:</strong> Dashboard real-time untuk monitoring stok bahan laundry</li>
+                        <li><strong>Automated Reminders:</strong> Notifikasi via WhatsApp untuk status cucian dan pengingat pickup</li>
+                        <li><strong>Customer Portal:</strong> Area pelanggan untuk melihat riwayat order dan poin loyalty</li>
+                    </ul>
+                </div>
+                
+                <!-- Technology Stack -->
+                <div class="case-section">
+                    <h2><i class="fas fa-code" style="margin-right: 10px;"></i>Teknologi & Tools</h2>
+                    <p>Website dikembangkan dengan teknologi modern untuk pengalaman pelanggan yang seamless:</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="tech-badge"><i class="fab fa-js"></i> JavaScript ES6+</span>
+                        <span class="tech-badge"><i class="fas fa-sync-alt"></i> Real-Time Updates</span>
+                        <span class="tech-badge green"><i class="fab fa-whatsapp"></i> WhatsApp API</span>
+                        <span class="tech-badge yellow"><i class="fas fa-qrcode"></i> QRIS Payment</span>
+                        <span class="tech-badge"><i class="fas fa-chart-line"></i> Analytics Dashboard</span>
+                        <span class="tech-badge green"><i class="fas fa-mobile-alt"></i> Mobile-First Design</span>
+                        <span class="tech-badge"><i class="fas fa-bolt"></i> PWA (Progressive Web App)</span>
+                    </div>
+                </div>
+                
+                <!-- Feature Showcase -->
+                <div class="case-section">
+                    <h2><i class="fas fa-star" style="margin-right: 10px;"></i>Fitur Unggulan</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4>Jadwal Fleksibel</h4>
+                            <p>Pickup & delivery sesuai waktu yang dipilih pelanggan</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h4>Live Tracking</h4>
+                            <p>Lacak status cucian secara real-time dari awal sampai selesai</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <h4>Loyalty Program</h4>
+                            <p>Dapatkan poin setiap order, tukar dengan reward menarik</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <h4>Smart Notifications</h4>
+                            <p>Notifikasi WhatsApp untuk setiap update status order</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Process -->
+                <div class="case-section">
+                    <h2><i class="fas fa-project-diagram" style="margin-right: 10px;"></i>Customer Journey Map</h2>
+                    <p>Alur pengalaman pelanggan yang disederhanakan:</p>
+                    
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <div class="step-circle">1</div>
+                            <div class="step-title">Pesan Online</div>
+                            <p>Pilih layanan & jadwal via website/app</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-circle">2</div>
+                            <div class="step-title">Pickup</div>
+                            <p>Kurir menjemput sesuai jadwal</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-circle">3</div>
+                            <div class="step-title">Proses Laundry</div>
+                            <p>Live tracking proses pengerjaan</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-circle">4</div>
+                            <div class="step-title">Delivery</div>
+                            <p>Cucian bersih diantar ke lokasi</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-circle">5</div>
+                            <div class="step-title">Earn Points</div>
+                            <p>Dapatkan poin loyalty setiap order</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Results & Impact -->
+                <div class="case-section">
+                    <h2><i class="fas fa-chart-line" style="margin-right: 10px;"></i>Hasil & Impact Bisnis</h2>
+                    <p>Setelah implementasi website premium dengan sistem terintegrasi:</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">150%</div>
+                            <div class="stat-label">Peningkatan Retention</div>
+                            <p style="font-size: 0.8rem; margin-top: 5px; color: var(--medium-gray);">dalam 3 bulan</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">40%</div>
+                            <div class="stat-label">Pengurangan Telepon</div>
+                            <p style="font-size: 0.8rem; margin-top: 5px; color: var(--medium-gray);">pertanyaan status order</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">25%</div>
+                            <div class="stat-label">Peningkatan Order</div>
+                            <p style="font-size: 0.8rem; margin-top: 5px; color: var(--medium-gray);">order online vs manual</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">4.8/5</div>
+                            <div class="stat-label">Customer Rating</div>
+                            <p style="font-size: 0.8rem; margin-top: 5px; color: var(--medium-gray);">rating kepuasan pelanggan</p>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin-top: 2rem; color: var(--black);">Key Achievements:</h4>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                        <li><strong>Live Tracking</strong> mengurangi 70% telepon untuk menanyakan status cucian</li>
+                        <li><strong>Loyalty Program</strong> meningkatkan repeat order sebesar 120%</li>
+                        <li><strong>Online Booking</strong> memungkinkan order 24/7 tanpa batas waktu</li>
+                        <li><strong>Automated System</strong> mengurangi kesalahan pencatatan order manual</li>
+                        <li><strong>Digital Payment</strong> mempercepat proses pembayaran dan mengurangi kas bon</li>
+                    </ul>
+                </div>
+                
+                <!-- Testimonial -->
+                <div class="case-section">
+                    <h2><i class="fas fa-comment-dots" style="margin-right: 10px;"></i>Testimoni Klien</h2>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Website ini benar-benar mengubah cara kami beroperasi. Dulu kami kewalahan menerima telepon untuk menanyakan status cucian. Sekarang pelanggan bisa track sendiri via website, dan staf kami bisa fokus pada kualitas cucian. Sistem loyalty-nya juga membuat pelanggan betah dan selalu kembali."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" alt="Sarah Wijaya">
+                            <div class="author-info">
+                                <h4>Sarah Wijaya</h4>
+                                <p>Owner, Arsyad Laundry Premium</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lessons Learned -->
+                <div class="case-section">
+                    <h2><i class="fas fa-graduation-cap" style="margin-right: 10px;"></i>Lessons Learned</h2>
+                    <div class="lessons-grid">
+                        <div class="lesson-card">
+                            <h4>Transparency Builds Trust</h4>
+                            <p>Live tracking memberikan rasa aman kepada pelanggan dan membangun kepercayaan terhadap brand.</p>
+                        </div>
+                        <div class="lesson-card">
+                            <h4>Automation Saves Time</h4>
+                            <p>Sistem otomatis mengurangi beban kerja manual dan meminimalisir human error.</p>
+                        </div>
+                        <div class="lesson-card">
+                            <h4>Loyalty Over Discounts</h4>
+                            <p>Program poin lebih efektif mempertahankan pelanggan daripada diskon sesaat.</p>
+                        </div>
+                        <div class="lesson-card">
+                            <h4>Mobile Experience First</h4>
+                            <p>90% pelanggan laundry menggunakan smartphone, sehingga mobile experience adalah prioritas utama.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Section -->
+                <div class="cta-section">
+                    <h2>Siap Modernisasi Bisnis Laundry Anda?</h2>
+                    <p>Dapatkan website laundry premium dengan sistem terintegrasi yang akan meningkatkan efisiensi operasional dan loyalitas pelanggan.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                        <a href="laundry.html" class="btn btn-white">
+                            <i class="fas fa-eye"></i> Lihat Demo Website
+                        </a>
+                        <a href="#" class="btn btn-success" onclick="alert('Fitur booking konsultasi akan diintegrasikan dengan sistem booking Anda')">
+                            <i class="fas fa-calendar-check"></i> Konsultasi Gratis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2026 Arsyad Laundry Case Study | Designed & Developed by Muhammad Arsyad</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">UI/UX Designer & Front-End Developer</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all case sections
+        document.querySelectorAll('.case-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Add hover effect for stats cards
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Simple animation for tech badges
+        document.querySelectorAll('.tech-badge').forEach((badge, index) => {
+            badge.style.animationDelay = `${index * 0.1}s`;
+            badge.style.opacity = '0';
+            badge.style.animation = 'fadeIn 0.5s ease forwards';
+        });
+
+        // Animate process steps on scroll
+        const processSteps = document.querySelectorAll('.process-step');
+        const processObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 200);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        processSteps.forEach(step => {
+            step.style.opacity = '0';
+            step.style.transform = 'translateY(20px)';
+            step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            processObserver.observe(step);
+        });
+
+        // Feature cards animation
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            card.style.opacity = '0';
+            card.style.animation = 'fadeIn 0.5s ease forwards';
+        });
+    </script>
+</body>
+</html>

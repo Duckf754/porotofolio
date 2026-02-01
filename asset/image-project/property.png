@@ -1,0 +1,7 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f59e0b"/>
+  <text x="400" y="280" font-family="Arial" font-size="48" fill="white" text-anchor="middle" font-weight="bold">Borneo Property</text>
+  <text x="400" y="340" font-family="Arial" font-size="24" fill="rgba(255,255,255,0.8)" text-anchor="middle">Website Properti dengan Virtual Tour</text>
+  <circle cx="400" cy="180" r="60" fill="rgba(255,255,255,0.2)"/>
+  <path d="M 370 200 L 400 170 L 430 200 L 430 220 L 370 220 Z" fill="white"/>
+</svg>

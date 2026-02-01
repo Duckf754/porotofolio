@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Restaurant Nusantara Demo - Portfolio Muhammad Arsyad</title>
+    <meta name="description" content="Case study demonstrasi website Restaurant Nusantara dengan sistem reservasi online dan menu digital interaktif - Project portfolio Muhammad Arsyad">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css-index/index.css">
+    <style>
+        /* Case Study Styles */
+        .case-study { 
+            padding: 120px 0 80px; 
+            background: var(--bg-white, #ffffff); 
+        }
+        
+        .case-header { 
+            text-align: center; 
+            margin-bottom: 4rem; 
+        }
+        
+        .case-header h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 1rem; 
+            color: var(--text-dark, #1a1a1a);
+        }
+        
+        .case-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light, #666);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .demo-badge {
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .case-meta { 
+            display: flex; 
+            justify-content: center; 
+            gap: 2rem; 
+            flex-wrap: wrap; 
+            margin-top: 1.5rem; 
+        }
+        
+        .case-meta-item { 
+            display: flex; 
+            align-items: center; 
+            gap: 0.5rem; 
+            color: var(--text-light, #666); 
+        }
+        
+        .case-meta-item i { 
+            color: var(--primary-color, #f59e0b); 
+        }
+        
+        .case-image { 
+            width: 100%; 
+            max-width: 1000px; 
+            margin: 0 auto 4rem; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .case-image img { 
+            width: 100%; 
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .case-image:hover img {
+            transform: scale(1.02);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .case-image:hover .image-overlay {
+            opacity: 1;
+        }
+        
+        .case-content { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        .case-section { 
+            margin-bottom: 4rem; 
+        }
+        
+        .case-section h2 { 
+            font-size: 2rem; 
+            margin-bottom: 1.5rem; 
+            color: var(--text-dark, #1a1a1a);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .case-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color, #f59e0b);
+        }
+        
+        .case-section h3 { 
+            font-size: 1.5rem; 
+            margin: 2rem 0 1rem; 
+            color: var(--text-dark, #1a1a1a); 
+        }
+        
+        .stats-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 2rem; 
+            margin: 2rem 0; 
+        }
+        
+        .stat-card { 
+            background: var(--bg-light, #f8f9fa); 
+            padding: 2rem; 
+            border-radius: 10px; 
+            text-align: center; 
+            border-left: 4px solid var(--primary-color, #f59e0b);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number { 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            color: var(--primary-color, #f59e0b); 
+            margin-bottom: 0.5rem; 
+        }
+        
+        .stat-label { 
+            color: var(--text-light, #666); 
+            font-size: 0.95rem; 
+        }
+        
+        .tech-stack { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 1rem; 
+            margin: 1.5rem 0; 
+        }
+        
+        .tech-badge { 
+            background: var(--primary-color, #f59e0b); 
+            color: white; 
+            padding: 0.5rem 1rem; 
+            border-radius: 20px; 
+            font-size: 0.9rem; 
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+        
+        .tech-badge:hover {
+            transform: translateY(-2px);
+        }
+        
+        .challenge-list, .solution-list { 
+            list-style: none; 
+            margin: 1.5rem 0; 
+        }
+        
+        .challenge-list li, .solution-list li { 
+            padding: 1.2rem; 
+            margin-bottom: 1rem; 
+            background: var(--bg-light, #f8f9fa); 
+            border-radius: 10px; 
+            border-left: 4px solid #ef4444; 
+            transition: transform 0.2s ease;
+        }
+        
+        .solution-list li { 
+            border-left-color: #10b981; 
+        }
+        
+        .challenge-list li:hover, .solution-list li:hover {
+            transform: translateX(5px);
+        }
+        
+        .challenge-list li::before { 
+            content: "⚠️ "; 
+            margin-right: 0.5rem; 
+        }
+        
+        .solution-list li::before { 
+            content: "✅ "; 
+            margin-right: 0.5rem; 
+        }
+        
+        .testimonial { 
+            background: var(--bg-light, #f8f9fa); 
+            padding: 2rem; 
+            border-radius: 10px; 
+            border-left: 4px solid var(--primary-color, #f59e0b); 
+            margin: 2rem 0; 
+        }
+        
+        .testimonial-text { 
+            font-style: italic; 
+            font-size: 1.1rem; 
+            color: var(--text-color, #333); 
+            margin-bottom: 1rem; 
+            line-height: 1.6;
+        }
+        
+        .testimonial-author { 
+            display: flex; 
+            align-items: center; 
+            gap: 1rem; 
+        }
+        
+        .testimonial-author img { 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            object-fit: cover;
+        }
+        
+        .author-info h4 { 
+            margin: 0; 
+            color: var(--text-dark, #1a1a1a); 
+        }
+        
+        .author-info p { 
+            margin: 0; 
+            color: var(--text-light, #666); 
+            font-size: 0.9rem; 
+        }
+        
+        .cta-section { 
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white; 
+            padding: 3rem; 
+            border-radius: 10px; 
+            text-align: center; 
+            margin-top: 4rem; 
+        }
+        
+        .cta-section h2 { 
+            color: white; 
+            margin-bottom: 1rem; 
+        }
+        
+        .cta-section p { 
+            color: rgba(255, 255, 255, 0.95); 
+            margin-bottom: 2rem; 
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-white { 
+            background: white; 
+            color: var(--primary-color, #f59e0b); 
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-white:hover { 
+            background: #f8f9fa; 
+            color: var(--primary-dark, #d97706);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .case-study {
+                padding: 100px 0 60px;
+            }
+            
+            .case-header h1 {
+                font-size: 2rem;
+            }
+            
+            .case-section h2 {
+                font-size: 1.7rem;
+            }
+            
+            .case-section h3 {
+                font-size: 1.3rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .stat-card {
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .tech-stack {
+                justify-content: center;
+            }
+        }
+        
+        /* Disclaimer Section */
+        .disclaimer-box {
+            background: #fff8e1;
+            border: 2px dashed #f59e0b;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .disclaimer-box h4 {
+            color: #d97706;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .disclaimer-box p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">Muhammad<span>Arsyad</span></a>
+                <a href="/" class="btn">← Kembali ke Portfolio</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="case-study">
+        <div class="container">
+            <div class="case-header">
+                <div class="demo-badge">
+                    <i class="fas fa-code"></i> PROJECT DEMONSTRASI
+                </div>
+                <h1>Restaurant Nusantara Demo</h1>
+                <p class="case-subtitle">Website demonstrasi untuk restoran dengan sistem reservasi online & menu digital interaktif - Dibangun sebagai bagian dari portfolio pengembangan web</p>
+                
+                <div class="disclaimer-box">
+                    <h4><i class="fas fa-info-circle"></i> PERHATIAN: Ini adalah Project Demonstrasi</h4>
+                    <p>Project ini dibuat sebagai bagian dari portfolio pengembangan web <strong>Muhammad Arsyad</strong> untuk menunjukkan kemampuan dalam membuat website restoran yang responsif dan modern. Semua data, testimoni, dan metrik yang ditampilkan adalah ilustrasi untuk tujuan demonstrasi.</p>
+                </div>
+                
+                <div class="case-meta">
+                    <div class="case-meta-item"><i class="fas fa-user"></i><span>Developer: Muhammad Arsyad</span></div>
+                    <div class="case-meta-item"><i class="fas fa-calendar"></i><span>Desember 2025</span></div>
+                    <div class="case-meta-item"><i class="fas fa-clock"></i><span>3 Minggu</span></div>
+                    <div class="case-meta-item"><i class="fas fa-tag"></i><span>Web Development</span></div>
+                    <div class="case-meta-item"><i class="fas fa-laptop-code"></i><span>Project Portfolio</span></div>
+                </div>
+            </div>
+            
+            <div class="case-image">
+                <img src="/asset/image-project/restaurant.png" alt="Restaurant Nusantara Demo Website">
+                <div class="image-overlay">
+                    Tampilan website Restaurant Nusantara - Project Demonstrasi Portfolio
+                </div>
+            </div>
+            
+            <div class="case-content">
+                <div class="case-section">
+                    <h2>📋 Gambaran Project</h2>
+                    <p>Project ini adalah <strong>website demonstrasi restoran</strong> yang dirancang untuk menunjukkan kemampuan pengembangan web modern dengan fokus pada:</p>
+                    <ul class="solution-list">
+                        <li><strong>Desain Responsif Mobile-First</strong> - Optimasi pengalaman pengguna di semua perangkat</li>
+                        <li><strong>Sistem Reservasi Terintegrasi WhatsApp</strong> - Menggunakan WhatsApp Business API untuk konfirmasi otomatis</li>
+                        <li><strong>Menu Digital Interaktif</strong> - Filter kategori, badge best seller, dan animasi halus</li>
+                        <li><strong>Optimasi Konversi</strong> - Strategi UI/UX untuk meningkatkan tindakan pengguna</li>
+                    </ul>
+                    <p>Website ini dibuat <strong>menggunakan vanilla HTML, CSS, dan JavaScript</strong> tanpa framework untuk menunjukkan pemahaman fundamental yang kuat.</p>
+                </div>
+                
+                <div class="case-section">
+                    <h2>🎯 Tujuan Project Demonstrasi</h2>
+                    <p>Sebagai bagian dari portfolio, project ini bertujuan untuk:</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Responsive Design</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">0</div>
+                            <div class="stat-label">Framework Dependensi</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">Section Interaktif</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">WCAG</div>
+                            <div class="stat-label">Aksesibilitas Standar</div>
+                        </div>
+                    </div>
+                    
+                    <p>Demonstrasi mencakup implementasi best practices untuk website bisnis F&B modern dengan fokus pada user experience dan conversion rate optimization.</p>
+                </div>
+                
+                <div class="case-section">
+                    <h2>⚙️ Fitur yang Diimplementasikan</h2>
+                    <ul class="solution-list">
+                        <li><strong>Sticky Navigation dengan Smooth Scroll</strong> - Navigasi yang tetap terlihat saat scroll</li>
+                        <li><strong>Menu dengan Kategori & Filter</strong> - Sistem filter untuk makanan, minuman, dessert</li>
+                        <li><strong>Sistem Reservasi WhatsApp</strong> - Form terintegrasi langsung ke WhatsApp Business</li>
+                        <li><strong>Testimoni Section</strong> - Slider testimoni untuk social proof</li>
+                        <li><strong>Google Maps Integration</strong> - Embed lokasi dengan custom styling</li>
+                        <li><strong>Jam Operasional Dinamis</strong> - Menampilkan status buka/tutup berdasarkan waktu</li>
+                        <li><strong>Sticky WhatsApp Button</strong> - CTA yang selalu tersedia untuk konsultasi</li>
+                        <li><strong>Animasi Micro-interactions</strong> - Transisi halus untuk pengalaman lebih baik</li>
+                    </ul>
+                </div>
+                
+                <div class="case-section">
+                    <h2>🛠️ Teknologi yang Digunakan</h2>
+                    <p>Project ini dibangun dengan teknologi dasar untuk menunjukkan kemampuan pengembangan web yang solid:</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">HTML5 Semantik</span>
+                        <span class="tech-badge">CSS3 dengan Variables</span>
+                        <span class="tech-badge">Vanilla JavaScript</span>
+                        <span class="tech-badge">WhatsApp API</span>
+                        <span class="tech-badge">Google Fonts</span>
+                        <span class="tech-badge">Font Awesome Icons</span>
+                        <span class="tech-badge">CSS Grid & Flexbox</span>
+                        <span class="tech-badge">Responsive Design</span>
+                    </div>
+                    <p style="margin-top: 1.5rem;"><strong>Catatan:</strong> Sengaja tidak menggunakan framework CSS (Bootstrap, Tailwind) untuk menunjukkan kemampuan CSS native.</p>
+                </div>
+                
+                <div class="case-section">
+                    <h2>📱 Pendekatan Mobile-First</h2>
+                    <p>Mengingat 80% pengunjung website restoran menggunakan perangkat mobile, project ini menerapkan prinsip <strong>mobile-first design</strong>:</p>
+                    
+                    <ul class="solution-list">
+                        <li><strong>Touch-friendly Interface</strong> - Button dengan ukuran minimum 48px untuk jari</li>
+                        <li><strong>Hamburger Menu</strong> - Navigation yang optimal untuk layar kecil</li>
+                        <li><strong>Optimasi Gambar</strong> - Gambar responsif dengan loading cepat</li>
+                        <li><strong>Simplified Hero Section</strong> - Konten hero yang lebih ringkas di mobile</li>
+                        <li><strong>Vertical Layout</strong> - Penyesuaian layout untuk scroll vertikal</li>
+                    </ul>
+                </div>
+                
+                <div class="case-section">
+                    <h2>🎨 Desain & User Experience</h2>
+                    <p>Aspek desain yang diperhatikan dalam project ini:</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                        <div style="background: #f8f5f0; padding: 1.5rem; border-radius: 10px;">
+                            <h4 style="color: #8b4513; margin-bottom: 0.5rem;">Warna & Branding</h4>
+                            <p style="font-size: 0.9rem; color: #666;">Palet warna hangat (coklat/emas/krem) untuk menciptakan suasana restoran yang nyaman dan premium.</p>
+                        </div>
+                        <div style="background: #f8f5f0; padding: 1.5rem; border-radius: 10px;">
+                            <h4 style="color: #8b4513; margin-bottom: 0.5rem;">Typography</h4>
+                            <p style="font-size: 0.9rem; color: #666;">Kombinasi font Poppins (sans-serif) untuk teks body dan Playfair Display (serif) untuk heading.</p>
+                        </div>
+                        <div style="background: #f8f5f0; padding: 1.5rem; border-radius: 10px;">
+                            <h4 style="color: #8b4513; margin-bottom: 0.5rem;">Animasi</h4>
+                            <p style="font-size: 0.9rem; color: #666;">Animasi halus untuk transisi, hover effects, dan scroll animations untuk pengalaman yang dinamis.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-section">
+                    <h2>📊 Hasil Implementasi (Ilustrasi)</h2>
+                    <p>Berikut adalah metrik ilustrasi yang menunjukkan potensi improvement dengan implementasi website seperti ini:</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">150%</div>
+                            <div class="stat-label">Potensi Peningkatan Reservasi</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">40%</div>
+                            <div class="stat-label">Pengurangan Beban Telepon</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3.2K</div>
+                            <div class="stat-label">Pengunjung/Bulan (Potensi)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">4.8/5</div>
+                            <div class="stat-label">User Experience Score</div>
+                        </div>
+                    </div>
+                    
+                    <div class="disclaimer-box" style="margin-top: 2rem;">
+                        <p><strong>Catatan:</strong> Angka di atas adalah ilustrasi untuk tujuan demonstrasi portfolio. Hasil aktual dapat bervariasi tergantung implementasi dan strategi marketing.</p>
+                    </div>
+                </div>
+                
+                <div class="case-section">
+                    <h2>💡 Tantangan & Solusi Teknis</h2>
+                    
+                    <h3>🚫 Tantangan yang Diatasi:</h3>
+                    <ul class="challenge-list">
+                        <li><strong>Responsive Menu Grid</strong> - Membuat grid menu yang adaptif di semua ukuran layar tanpa framework</li>
+                        <li><strong>Smooth Scroll Navigation</strong> - Implementasi scroll halus dengan offset untuk fixed header</li>
+                        <li><strong>Filter Menu JavaScript</strong> - Sistem filter kategori dengan animasi transisi</li>
+                        <li><strong>Mobile Navigation</strong> - Hamburger menu dengan animasi toggle</li>
+                        <li><strong>Performance Optimization</strong> - Memastikan website cepat tanpa dependency berat</li>
+                    </ul>
+                    
+                    <h3>✅ Solusi yang Diterapkan:</h3>
+                    <ul class="solution-list">
+                        <li><strong>CSS Grid dengan auto-fit</strong> - Layout responsif tanpa media query berlebihan</li>
+                        <li><strong>Vanilla JavaScript Scroll</strong> - Implementasi smooth scroll dengan window.scrollTo()</li>
+                        <li><strong>Event Delegation</strong> - Efisien handling event untuk filter buttons</li>
+                        <li><strong>CSS Transitions</strong> - Animasi murni CSS untuk performa optimal</li>
+                        <li><strong>Lazy Loading Concept</strong> - Strategi loading untuk elemen yang terlihat saja</li>
+                    </ul>
+                </div>
+                
+                <div class="case-section">
+                    <h2>📁 Struktur Kode & Organisasi</h2>
+                    <p>Project ini mengikuti struktur kode yang rapi dan terorganisir:</p>
+                    
+                    <ul class="solution-list">
+                        <li><strong>Pemisahan File yang Jelas</strong> - index.html, style.css, script.js terpisah</li>
+                        <li><strong>CSS dengan Variables</strong> - Konsistensi warna, spacing, typography</li>
+                        <li><strong>Semantic HTML</strong> - Penggunaan tag HTML5 semantik untuk aksesibilitas</li>
+                        <li><strong>Modular JavaScript</strong> - Fungsi yang terorganisir dengan event listeners</li>
+                        <li><strong>Komentar yang Jelas</strong> - Dokumentasi dalam kode untuk maintainability</li>
+                    </ul>
+                </div>
+                
+                <div class="case-section">
+                    <h2>🚀 Pelajaran yang Didapat</h2>
+                    <p>Project ini memberikan pemahaman mendalam tentang:</p>
+                    
+                    <div style="background: #f0f9ff; padding: 2rem; border-radius: 10px; margin: 1.5rem 0;">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check" style="color: #10b981; margin-right: 10px; margin-top: 5px;"></i>
+                                <span>Importance of mobile-first design untuk bisnis lokal</span>
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check" style="color: #10b981; margin-right: 10px; margin-top: 5px;"></i>
+                                <span>Strategi konversi untuk website F&B (reservasi, WhatsApp CTA)</span>
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check" style="color: #10b981; margin-right: 10px; margin-top: 5px;"></i>
+                                <span>Performance optimization tanpa dependency framework</span>
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: flex-start;">
+                                <i class="fas fa-check" style="color: #10b981; margin-right: 10px; margin-top: 5px;"></i>
+                                <span>User experience patterns untuk industri hospitality</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h2>Tertarik dengan Project Serupa?</h2>
+                    <p>Sebagai developer, saya siap membantu mewujudkan website profesional untuk bisnis Anda. Project ini menunjukkan kemampuan saya dalam membuat solusi web yang efektif dan user-friendly.</p>
+                    <a href="/#contact" class="btn-white">
+                        <i class="fas fa-envelope"></i> Hubungi Saya
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2026 Portfolio <strong>Muhammad Arsyad</strong> - Project Demonstrasi Web Development</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                    <i class="fas fa-info-circle"></i> Semua project dalam portfolio ini adalah karya original untuk tujuan demonstrasi kemampuan.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

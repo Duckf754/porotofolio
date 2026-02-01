@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsyad Nusantara - Cita Rasa Tradisional Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/6285824390625?text=Halo%20Restaurant%20Nusantara,%20saya%20ingin%20tanya%20tentang%20menu%20dan%20harga" 
+       class="whatsapp-btn" target="_blank" aria-label="Chat via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat Kami</span>
+    </a>
+
+    <!-- Sticky Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Nusantara</a>
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#about" class="nav-link">Tentang</a></li>
+                <li><a href="#why-us" class="nav-link">Kenapa Kami?</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimoni</a></li>
+                <li><a href="#location" class="nav-link">Lokasi</a></li>
+                <li><a href="#reservation" class="nav-link nav-cta">Reservasi</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Arsyad Nusantara</h1>
+            <p class="hero-subtitle">Cita Rasa Tradisional Indonesia yang Autentik</p>
+            <p class="hero-description">Sejak 2010, kami menghadirkan kelezatan asli Nusantara dengan sentuhan modern</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">
+                    <i class="fas fa-utensils"></i> Lihat Menu
+                </a>
+                <a href="https://wa.me/6285824390625?text=Halo,%20saya%20ingin%20reservasi%20meja%20di%20Restaurant%20Nusantara" 
+                   class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Reservasi via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section menu-section">
+        <div class="container">
+            <h2 class="section-title">Menu Spesial Kami</h2>
+            <p class="section-subtitle">Pilihan terbaik dari berbagai daerah di Indonesia</p>
+            
+            <!-- Menu Categories -->
+            <div class="category-tabs">
+                <button class="category-btn active" data-category="all">Semua</button>
+                <button class="category-btn" data-category="food">Makanan</button>
+                <button class="category-btn" data-category="drink">Minuman</button>
+                <button class="category-btn" data-category="dessert">Dessert</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid">
+                <!-- Menu Item 1 -->
+                <div class="menu-card" data-category="food">
+                    <div class="menu-badge bestseller">Best Seller</div>
+                    <div class="menu-img">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Rendang Sapi</h3>
+                        <p>Daging sapi pilihan dengan bumbu rempah tradisional, dimasak 8 jam hingga empuk</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 85.000</span>
+                            <button class="btn-order" data-item="Rendang Sapi">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="menu-card" data-category="food">
+                    <div class="menu-badge recommendation">Rekomendasi</div>
+                    <div class="menu-img">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Ikan Bakar Sambal Dabu</h3>
+                        <p>Ikan segar bakar dengan sambal dabu khas Manado yang pedas segar</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 75.000</span>
+                            <button class="btn-order" data-item="Ikan Bakar Sambal Dabu">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="menu-card" data-category="food">
+                    <div class="menu-badge bestseller">Best Seller</div>
+                    <div class="menu-img">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Ayam Betutu</h3>
+                        <p>Ayam utuh dengan bumbu khas Bali, dimasak dengan teknik tradisional</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 95.000</span>
+                            <button class="btn-order" data-item="Ayam Betutu">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 4 -->
+                <div class="menu-card" data-category="food">
+                    <div class="menu-badge recommendation">Rekomendasi</div>
+                    <div class="menu-img">
+                        <i class="fas fa-bowl-rice"></i>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Nasi Liwet Komplit</h3>
+                        <p>Nasi liwet dengan lauk lengkap: ayam, tahu, tempe, dan sayur</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 55.000</span>
+                            <button class="btn-order" data-item="Nasi Liwet Komplit">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 5 -->
+                <div class="menu-card" data-category="food">
+                    <div class="menu-img">
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Soto Banjar</h3>
+                        <p>Soto khas Kalimantan dengan kuah gurih dan daging ayam empuk</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 45.000</span>
+                            <button class="btn-order" data-item="Soto Banjar">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 6 -->
+                <div class="menu-card" data-category="drink">
+                    <div class="menu-img">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Es Cendol Durian</h3>
+                        <p>Minuman segar dengan cendol, santan, dan durian asli</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 35.000</span>
+                            <button class="btn-order" data-item="Es Cendol Durian">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 7 -->
+                <div class="menu-card" data-category="drink">
+                    <div class="menu-img">
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Wedang Jahe</h3>
+                        <p>Minuman hangat jahe asli dengan gula aren dan rempah</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 25.000</span>
+                            <button class="btn-order" data-item="Wedang Jahe">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 8 -->
+                <div class="menu-card" data-category="dessert">
+                    <div class="menu-img">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Klepon</h3>
+                        <p>Kue tradisional berisi gula merah dengan taburan kelapa parut</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp 20.000</span>
+                            <button class="btn-order" data-item="Klepon">
+                                <i class="fas fa-cart-plus"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Tentang Arsyad  Nusantara</h2>
+                    <p>Didirikan pada tahun 2010, Restaurant Nusantara berkomitmen untuk melestarikan dan memodernisasi cita rasa tradisional Indonesia. Kami percaya bahwa setiap hidangan memiliki cerita dan filosofi tersendiri.</p>
+                    <p>Dengan bahan-bahan pilihan langsung dari petani lokal dan rempah-rempah segar, kami menghadirkan pengalaman kuliner autentik yang tak terlupakan. Chef kami telah menempuh perjalanan panjang ke berbagai daerah di Indonesia untuk mempelajari resep asli dari tangan pertama.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Bahan Lokal Berkualitas</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-mortar-pestle"></i>
+                            <span>Resep Tradisional Asli</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-users"></i>
+                            <span>Pelayanan Ramah</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="section why-us-section">
+        <div class="container">
+            <h2 class="section-title">Kenapa Memilih Kami?</h2>
+            <p class="section-subtitle">Keunggulan yang membuat pengalaman makan Anda lebih berkesan</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Bahan Segar</h3>
+                    <p>Sayuran dan rempah segar setiap hari langsung dari petani lokal terpercaya</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Masakan Tradisional</h3>
+                    <p>Proses masak mengikuti resep turun-temurun dengan waktu yang tepat</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Chef Berpengalaman</h3>
+                    <p>Tim chef profesional dengan pengalaman lebih dari 10 tahun</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Pelayanan Ramah</h3>
+                    <p>Staf yang sopan dan membantu untuk pengalaman terbaik Anda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
+            <p class="section-subtitle">Pengalaman nyata dari pengunjung Restaurant Nusantara</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Rendangnya luar biasa! Empuk dan bumbunya meresap sempurna. Rasanya seperti di rumah sendiri."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Budi Santoso</h4>
+                            <span>Pengunjung Setia</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Atmosfernya sangat nyaman, pelayanan cepat, dan makanan benar-benar autentik. Akan kembali lagi!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Sari Dewi</h4>
+                            <span>Food Blogger</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"Tempat yang sempurna untuk keluarga. Menu lengkap, harga terjangkau, dan rasa tak mengecewakan."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Ahmad Fauzi</h4>
+                            <span>Keluarga Besar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours Section -->
+    <section class="section hours-section">
+        <div class="container">
+            <div class="hours-content">
+                <div class="hours-text">
+                    <h2 class="section-title">Jam Operasional</h2>
+                    <div class="hours-list">
+                        <div class="hour-item">
+                            <span class="day">Senin - Kamis</span>
+                            <span class="time">10:00 - 22:00</span>
+                        </div>
+                        <div class="hour-item">
+                            <span class="day">Jumat</span>
+                            <span class="time">10:00 - 23:00</span>
+                        </div>
+                        <div class="hour-item">
+                            <span class="day">Sabtu</span>
+                            <span class="time">09:00 - 23:00</span>
+                        </div>
+                        <div class="hour-item">
+                            <span class="day">Minggu & Hari Libur</span>
+                            <span class="time">09:00 - 22:00</span>
+                        </div>
+                    </div>
+                    <p class="hours-note">*Reservasi disarankan untuk akhir pekan dan hari libur</p>
+                </div>
+                <div class="hours-cta">
+                    <h3>Butuh Bantuan?</h3>
+                    <p>Tim kami siap membantu Anda 7 hari seminggu</p>
+                    <a href="https://wa.me/6285824390625?text=Halo%20Restaurant%20Nusantara,%20saya%20membutuhkan%20bantuan" 
+                       class="btn btn-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section location-section">
+        <div class="container">
+            <h2 class="section-title">Lokasi Kami</h2>
+            <p class="section-subtitle">Kunjungi restoran kami untuk pengalaman langsung</p>
+            
+            <div class="location-content">
+                <div class="location-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Alamat</h3>
+                        <p>Jl. Nusantara Indah No. 123<br>Jakarta Selatan, 12560<br>Indonesia</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-phone"></i> Telepon</h3>
+                        <p>(021) 1234-5678</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-envelope"></i> Email</h3>
+                        <p>info@restaurantnusantara.com</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-car"></i> Parkir</h3>
+                        <p>Tersedia area parkir luas untuk mobil dan motor</p>
+                    </div>
+                </div>
+                
+                <div class="location-map">
+                    <!-- Google Maps Embed Placeholder -->
+                    <div class="map-placeholder">
+                        <i class="fas fa-map"></i>
+                        <p>Peta Lokasi Restaurant Nusantara</p>
+                        <small>Google Maps akan ditampilkan di sini</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="section reservation-section">
+        <div class="container">
+            <div class="reservation-content">
+                <div class="reservation-text">
+                    <h2 class="section-title">Siap Menikmati Hidangan Kami?</h2>
+                    <p>Jangan sampai kehabisan tempat! Reservasi sekarang untuk pengalaman kuliner terbaik di Restaurant Nusantara.</p>
+                    <div class="reservation-features">
+                        <div class="reservation-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Konfirmasi Instan via WhatsApp</span>
+                        </div>
+                        <div class="reservation-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Meja Terjamin Sesuai Permintaan</span>
+                        </div>
+                        <div class="reservation-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Pelayanan Prioritas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reservation-actions">
+                    <a href="https://wa.me/6285824390625?text=Halo%20Restaurant%20Nusantara,%20saya%20ingin%20reservasi%20meja%20untuk%20[jumlah]%20orang%20pada%20[tanggal]%20jam%20[waktu]" 
+                       class="btn btn-primary btn-large" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Reservasi via WhatsApp
+                    </a>
+                    
+                    <a href="https://wa.me/6285824390625?text=Halo%20Restaurant%20Nusantara,%20saya%20ingin%20request%20menu%20dan%20harga%20terbaru" 
+                       class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-file-alt"></i> Request Menu & Harga
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">Nusantara</h3>
+                    <p>Menghadirkan cita rasa tradisional Indonesia dengan sentuhan modern sejak 2010.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Tautan Cepat</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#location">Lokasi</a></li>
+                        <li><a href="#reservation">Reservasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Jakarta Selatan</li>
+                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
+                        <li><i class="fas fa-envelope"></i> info@restaurantnusantara.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Restaurant Nusantara. Demo Website oleh Muhammad Arsyad</p>
+                <p>Semua hak dilindungi undang-undang</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <h3>Pesanan Anda</h3>
+            <p id="orderItemName"></p>
+            <p>Apakah Anda ingin memesan item ini melalui WhatsApp?</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary modal-cancel">Batal</button>
+                <a href="#" class="btn btn-primary" id="confirmOrder">Pesan via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

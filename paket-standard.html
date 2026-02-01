@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Standar - Website 3 Halaman - Muhammad Arsyad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="paket.css">
+    <link rel="stylesheet" href="FOTO.css">
+<style>
+/* ===== PAKET STANDAR SPECIFIC STYLES ===== */
+.paket-standar {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
+}
+
+.standar-badge {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.standar-card {
+    border-left: 4px solid #007bff;
+    background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
+}
+
+.standar-hosting {
+    border-left: 4px solid #007bff;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+}
+
+.standar-gallery {
+    border: 2px solid #007bff;
+}
+
+.standar-step .step-number {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.standar-process {
+    background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
+}
+
+.value-proposition {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 3rem;
+}
+
+.value-proposition h2 {
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--light);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.value-item h4 {
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+
+.package-comparison {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 3rem;
+}
+
+.package-comparison h2 {
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comparison-table {
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.comparison-table th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 1rem;
+    text-align: left;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.comparison-table tr:nth-child(even) {
+    background: var(--light);
+}
+
+.comparison-table tr:hover {
+    background: #e3f2fd;
+}
+
+.comparison-table strong {
+    color: var(--primary);
+}
+
+.comparison-note {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.standar-cta .cta-box {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.btn-standar {
+    background: var(--white);
+    color: #007bff;
+}
+
+.btn-standar:hover {
+    background: var(--light);
+    color: #0056b3;
+}
+
+.special-offer {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin: 2rem 0;
+    position: relative;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.offer-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #ffc107;
+    color: var(--dark);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.special-offer h4 {
+    color: var(--warning);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.special-offer p {
+    margin-bottom: 0.5rem;
+}
+
+.offer-expiry {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+.gallery-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.tag {
+    background: var(--primary);
+    color: var(--white);
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.industries li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.8rem;
+}
+
+.industries i {
+    color: var(--primary);
+    width: 20px;
+}
+
+.standar-float {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.standar-float:hover {
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+} </style>
+</head>
+<body class="paket-standar">
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Porto<span>folio</span></a>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">Beranda</a></li>
+                    <li><a href="index.html#about">Tentang</a></li>
+                    <li><a href="index.html#paket">Paket</a></li>
+                    <li><a href="index.html#portfolio">Portofolio</a></li>
+                    <li><a href="index.html#contact">Kontak</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Paket Detail Section -->
+    <section class="paket-detail container">
+        <div class="paket-header">
+            <div class="paket-badge standar-badge">BEST VALUE</div>
+            <h1>Paket Standar</h1>
+            <p class="paket-price">Rp <span class="highlight">600.000</span></p>
+            <p class="paket-tagline">Website Profesional Terbaik untuk Bisnis Lokal</p>
+        </div>
+
+        <div class="paket-content">
+            <!-- Highlight -->
+            <div class="paket-highlight">
+                <div class="highlight-box">
+                    <i class="fas fa-fire"></i>
+                    <h4>Cocok Untuk:</h4>
+                    <p>Laundry, Barbershop, Coffee Shop, Home Service, UKM Menengah</p>
+                </div>
+                <div class="highlight-box">
+                    <i class="fas fa-clock"></i>
+                    <h4>Waktu Pengerjaan:</h4>
+                    <p>3-5 Hari Kerja</p>
+                </div>
+                <div class="highlight-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Garansi:</h4>
+                    <p>Revisi 2x + Garansi 45 Hari</p>
+                </div>
+            </div>
+
+            <!-- Deskripsi Paket -->
+            <div class="paket-description">
+                <img src="standar.jpeg" alt="Ilustrasi Website Standar" class="foto-set">
+                <h2><i class="fas fa-check-circle"></i> Paket Terlaris untuk Bisnis Lokal</h2>
+                <p><strong>"Website Profesional, Harga Terjangkau"</strong> - Paket Standar adalah pilihan paling populer untuk UMKM yang ingin tampil profesional tanpa biaya mahal. Sudah lengkap untuk kebutuhan sehari-hari bisnis Anda.</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card standar-card">
+                        <h3><i class="fas fa-check-circle"></i> Yang Termasuk:</h3>
+                        <ul class="feature-list">
+                            <li><strong>3 Halaman Website Lengkap:</strong>
+                                <ul>
+                                    <li>Homepage (Desain modern & menarik)</li>
+                                    <li>Layanan & Harga (Detail lengkap)</li>
+                                    <li>Kontak / Tentang Kami</li>
+                                </ul>
+                            </li>
+                            <li><strong>Galeri Foto Dasar:</strong> Max 10 foto produk/layanan</li>
+                            <li><strong>Tombol WhatsApp:</strong> Di setiap halaman</li>
+                            <li><strong>Integrasi Lengkap:</strong>
+                                <ul>
+                                    <li>Link Instagram bisnis</li>
+                                    <li>Google Maps embed</li>
+                                    <li>WhatsApp untuk penawaran</li>
+                                </ul>
+                            </li>
+                            <li><strong>Desain Responsif:</strong> Mobile & desktop friendly</li>
+                            <li><strong>Website Cepat & Ringan:</strong> Optimasi loading</li>
+                            <li><strong>Hosting Berkualitas:</strong> 6 bulan gratis</li>
+                            <li><strong>Support:</strong> Revisi 2x, garansi bug 45 hari</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-exclamation-circle"></i> Yang Tidak Termasuk:</h3>
+                        <ul class="feature-list">
+                            <li>CMS (Content Management System)</li>
+                            <li>Domain premium (.com, .id) - bisa add-on</li>
+                            <li>Galeri foto unlimited</li>
+                            <li>Halaman lebih dari 3</li>
+                            <li>SEO optimization advanced</li>
+                            <li>Maintenance berkala bulanan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="hosting-info standar-hosting">
+                    <h4><i class="fas fa-globe-asia"></i> Hosting & Domain Paket Standar:</h4>
+                    <p><strong>Hosting:</strong> 6 bulan gratis hosting premium dengan kecepatan tinggi.</p>
+                    <p><strong>Domain:</strong> Domain gratis (.online, .site) atau bisa upgrade ke .com/.id (+Rp 150.000/tahun)</p>
+                    <p><strong>Keamanan:</strong> SSL certificate included untuk https</p>
+                </div>
+            </div>
+
+            <!-- Contoh Website -->
+            <div class="paket-gallery">
+                <h2><i class="fas fa-store"></i> Contoh Website Bisnis Lokal</h2>
+                <p>Berikut contoh website laundry, coffee shop, dan barbershop yang dibuat dengan paket ini:</p>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item standar-gallery">
+                        <div class="gallery-img-container">
+                            <img src="/asset/image-project/laundry.png" alt="Website Laundry">
+                            <div class="gallery-overlay">
+                                <a href="/project/laundry-kiloan/laundry-kilo.html" target="_blank" class="btn-gallery">
+                                    <i class="fas fa-external-link-alt"></i> Lihat Demo
+                                </a>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Website Laundry Kiloan</h4>
+                            <p>3 halaman: Home, Layanan & Harga, Kontak. Perfect untuk laundry dengan sistem harga per kilo.</p>
+                            <div class="gallery-tags">
+                                <span class="tag">Laundry</span>
+                                <span class="tag">Harga</span>
+                                <span class="tag">WhatsApp</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item standar-gallery">
+                        <div class="gallery-img-container">
+                            <img src="/asset/image-project/coffe-shop.png" alt="Website Coffee Shop">
+                            <div class="gallery-overlay">
+                                <a href="/project/coffe-shop/coffe-shop.html" target="_blank" class="btn-gallery">
+                                    <i class="fas fa-external-link-alt"></i> Lihat Demo
+                                </a>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Website Coffee Shop</h4>
+                            <p>Website untuk coffee shop lokal dengan menu digital, galeri, dan lokasi Google Maps.</p>
+                            <div class="gallery-tags">
+                                <span class="tag">Coffee</span>
+                                <span class="tag">Menu</span>
+                                <span class="tag">Maps</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item standar-gallery">
+                        <div class="gallery-img-container">
+                            <img src="/asset/image-project/barbershop.png" alt="Website Barbershop">
+                            <div class="gallery-overlay">
+                                <a href="project/barbershop/index.html" target="_blank" class="btn-gallery">
+                                    <i class="fas fa-external-link-alt"></i> Lihat Demo
+                                </a>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Website Barbershop</h4>
+                            <p>Tampilkan gaya potongan, harga layanan, dan booking via WhatsApp. Modern & clean.</p>
+                            <div class="gallery-tags">
+                                <span class="tag">Barber</span>
+                                <span class="tag">Gaya</span>
+                                <span class="tag">Booking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proses Pengerjaan -->
+            <div class="work-process standar-process">
+                <h2><i class="fas fa-cogs"></i> Proses Cepat & Efisien</h2>
+                <div class="process-steps">
+                    <div class="step standar-step">
+                        <div class="step-number">1</div>
+                        <h4>Data & Brief</h4>
+                        <p>Kirim logo, foto, teks via WhatsApp</p>
+                    </div>
+                    <div class="step standar-step">
+                        <div class="step-number">2</div>
+                        <h4>Design Sprint</h4>
+                        <p>Mockup homepage dalam 1-2 hari</p>
+                    </div>
+                    <div class="step standar-step">
+                        <div class="step-number">3</div>
+                        <h4>Development</h4>
+                        <p>Bangun 3 halaman + integrasi</p>
+                    </div>
+                    <div class="step standar-step">
+                        <div class="step-number">4</div>
+                        <h4>Review & Launch</h4>
+                        <p>Revisi 2x, kemudian website live!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Proposition -->
+            <div class="value-proposition">
+                <h2><i class="fas fa-chart-bar"></i> Nilai Investasi Anda</h2>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>ROI Cepat</h4>
+                        <p>Website bisa balik modal dari 2-3 pelanggan baru</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Mobile-First</h4>
+                        <p>80% pelanggan buka via HP - website dioptimalkan</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>Support Lengkap</h4>
+                        <p>Bimbingan sampai bisa pakai website dengan lancar</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h4>Future-Proof</h4>
+                        <p>Bisa upgrade ke Premium nanti tanpa start from scratch</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perbandingan dengan Paket Lain -->
+            <div class="package-comparison">
+                <h2><i class="fas fa-balance-scale-left"></i> Kenapa Pilih Standar vs Basic?</h2>
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fitur</th>
+                                <th>Paket Basic (300k)</th>
+                                <th>Paket Standar (600k)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jumlah Halaman</td>
+                                <td>1 halaman</td>
+                                <td><strong>3 halaman</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Galeri Foto</td>
+                                <td>Tidak ada</td>
+                                <td><strong>Max 10 foto</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Revisi</td>
+                                <td>1x</td>
+                                <td><strong>2x</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Halaman Layanan</td>
+                                <td>Tidak ada</td>
+                                <td><strong>Detail harga & layanan</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Integrasi Maps</td>
+                                <td>Tidak</td>
+                                <td><strong>Ya</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Garansi</td>
+                                <td>30 hari</td>
+                                <td><strong>45 hari</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="comparison-note"><i class="fas fa-lightbulb"></i> <strong>Tip:</strong> Jika bisnis Anda punya lebih dari 3 layanan atau butuh showcase foto produk, Paket Standar worth the upgrade!</p>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h2><i class="fas fa-comments"></i> Pertanyaan Umum Paket Standar</h2>
+                <div class="faq-item">
+                    <h4>Apakah cocok untuk usaha makanan/minuman?</h4>
+                    <p><strong>Sangat cocok!</strong> Banyak coffee shop, warung makan, dan catering pakai paket ini. Bisa tambah galeri foto menu dan embed Google Maps untuk lokasi.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Bisakah update harga nanti?</h4>
+                    <p>Bisa! Saya akan kasih akses ke file sederhana untuk update harga. Atau bisa tambah jasa update per update (+Rp 50.000).</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Bagaimana kalau butuh tambah 1 halaman?</h4>
+                    <p>Bisa add-on per halaman (+Rp 150.000). Atau upgrade ke <a href="paket-premium.html">Paket Premium</a> yang sudah include 4-5 halaman.</p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="paket-cta standar-cta">
+                <div class="cta-box">
+                    <h3><i class="fas fa-rocket"></i> Ready to Level Up Your Business?</h3>
+                    <p>Hanya <strong>Rp 600.000</strong> untuk website 3 halaman profesional yang siap menarik pelanggan baru.</p>
+                    
+                    <div class="special-offer">
+                        <div class="offer-badge">TERBATAS</div>
+                        <h4><i class="fas fa-gift"></i> Special Offer Bulan Ini:</h4>
+                        <p>Pesan sekarang dapat <strong>GRATIS setup Instagram Business</strong> + <strong>1x konsultasi marketing digital</strong> (senilai Rp 150.000)</p>
+                        <p class="offer-expiry"><i class="fas fa-clock"></i> Berlaku untuk 5 klien pertama bulan ini</p>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/6285824390625?text=Halo,%20saya%20tertarik%20dengan%20Paket%20Standar%20(Rp%20600.000)%20dan%20ingin%20tanya%20tentang%20special%20offer" 
+                           class="btn btn-standar">
+                            <i class="fab fa-whatsapp"></i> Pesan + Dapat Bonus
+                        </a>
+                        <a href="index.html#paket" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Bandingkan Paket Lain
+                        </a>
+                    </div>
+                    
+                    <div class="cta-note">
+                        <p><i class="fas fa-check-circle"></i> <strong>Proven Result:</strong> 50+ bisnis lokal sudah pakai paket ini</p>
+                        <p><i class="fas fa-star"></i> <strong>Rating:</strong> 4.8/5 dari klien paket standar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Portofolio</h3>
+                    <p>Jasa pembuatan website terjangkau untuk UMKM dan bisnis lokal dengan hasil profesional.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/6285824390625"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Paket Best Seller</h3>
+                    <ul>
+                        <li><a href="paket-basic.html">Paket Basic (300k)</a></li>
+                        <li><strong>Paket Standar (600k)</strong> ← TERLARIS</li>
+                        <li><a href="paket-premium.html">Paket Premium (1,2jt)</a></li>
+                        <li><a href="paket-custom.html">Paket Custom</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Industri Cocok</h3>
+                    <ul class="industries">
+                        <li><i class="fas fa-tshirt"></i> Laundry & Cuci Sepatu</li>
+                        <li><i class="fas fa-coffee"></i> Coffee Shop & Cafe</li>
+                        <li><i class="fas fa-cut"></i> Barbershop & Salon</li>
+                        <li><i class="fas fa-home"></i> Home Service</li>
+                        <li><i class="fas fa-store"></i> Retail Lokal</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Muhammad Arsyad. Paket Standar - Solusi Terbaik untuk Bisnis Lokal.</p>
+                <p class="disclaimer">*Harga sudah termasuk PPN. Special offer berlaku kelipatan terbatas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6285824390625?text=Halo,%20saya%20mau%20tanya%20tentang%20Paket%20Standar%20(Rp%20600.000)" 
+       class="whatsapp-float standar-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Tanya Paket Standar</span>
+    </a>
+
+    <script>
+        // Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item h4').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Special Offer Countdown
+        function updateOfferCount() {
+            const now = new Date();
+            const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+            const daysLeft = Math.floor((endOfMonth - now) / (1000 * 60 * 60 * 24));
+            
+            if (daysLeft >= 0) {
+                document.querySelector('.offer-expiry').innerHTML = 
+                    `<i class="fas fa-clock"></i> Berakhir dalam ${daysLeft} hari | Kuota tersisa: 3/5`;
+            }
+        }
+        
+        updateOfferCount();
+    </script>
+</body>
+</html>

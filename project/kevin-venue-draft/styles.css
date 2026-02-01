@@ -1,0 +1,103 @@
+:root {
+    --rich-black: #1a1a1a;
+    --warm-white: #f9f9f9;
+    --luxury-gold: #d4af37;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.font-heading {
+    font-family: 'Playfair Display', serif;
+}
+
+.bg-rich-black {
+    background-color: var(--rich-black);
+}
+
+.text-rich-black {
+    color: var(--rich-black);
+}
+
+.bg-warm-white {
+    background-color: var(--warm-white);
+}
+
+.text-warm-white {
+    color: var(--warm-white);
+}
+
+.bg-luxury-gold {
+    background-color: var(--luxury-gold);
+}
+
+.text-luxury-gold {
+    color: var(--luxury-gold);
+}
+
+/* Venue Card Styles */
+.venue-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.venue-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.venue-card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Gallery Styles */
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 250px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+/* Form Styles */
+input:focus, select:focus {
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .venue-card {
+        padding: 1.5rem;
+    }
+    
+    .gallery-item {
+        height: 200px;
+    }
+}

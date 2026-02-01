@@ -1,0 +1,1219 @@
+/* ============================================
+   PAKET KOSTUM - CSS PREMIUM & ISTIMEWA
+   By: Muhammad Arsyad
+   ============================================ */
+
+/* ===== VARIABLES LUXURY ===== */
+:root {
+    --luxury-gold: #D4AF37;
+    --luxury-purple: #6A0DAD;
+    --luxury-dark: #1A1A2E;
+    --luxury-card: #16213E;
+    --luxury-accent: #0F3460;
+    --luxury-light: #E6E6FA;
+    --luxury-gradient: linear-gradient(135deg, #6A0DAD 0%, #D4AF37 100%);
+    --luxury-gradient-reverse: linear-gradient(135deg, #D4AF37 0%, #6A0DAD 100%);
+    --luxury-shadow: 0 20px 40px rgba(106, 13, 173, 0.3);
+    --luxury-glow: 0 0 30px rgba(212, 175, 55, 0.5);
+    --luxury-border: 2px solid rgba(212, 175, 55, 0.3);
+    --transition-luxury: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== RESET & BASE LUXURY ===== */
+.paket-custom {
+    background: linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%);
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.paket-custom::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(106, 13, 173, 0.1) 0%, transparent 50%);
+    z-index: -1;
+}
+
+/* ===== HEADER LUXURY ===== */
+.paket-custom header {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: var(--luxury-border);
+    box-shadow: var(--luxury-shadow);
+}
+
+.paket-custom .logo {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.paket-custom .logo span {
+    background: var(--luxury-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.paket-custom .logo::after {
+    content: '✨';
+    position: absolute;
+    right: -25px;
+    animation: twinkle 2s infinite;
+}
+
+.paket-custom .nav-menu a {
+    color: var(--luxury-light);
+    position: relative;
+    padding: 5px 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.paket-custom .nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--luxury-gradient);
+    transition: var(--transition-luxury);
+}
+
+.paket-custom .nav-menu a:hover::after {
+    width: 100%;
+}
+
+.paket-custom .nav-menu a:hover {
+    color: var(--luxury-gold);
+}
+
+/* ===== PAKET HEADER LUXURY ===== */
+.paket-custom .paket-header {
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 2rem auto;
+    max-width: 900px;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+    border: var(--luxury-border);
+    box-shadow: var(--luxury-shadow);
+}
+
+.paket-custom .paket-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--luxury-gradient);
+}
+
+.paket-custom .paket-badge.custom-badge {
+    background: var(--luxury-gradient);
+    color: var(--luxury-dark);
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 8px 25px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.paket-custom .paket-header h1 {
+    font-size: 3.5rem;
+    background: var(--luxury-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 1rem 0;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 0 5px 15px rgba(106, 13, 173, 0.3);
+}
+
+.paket-custom .paket-price {
+    font-size: 2.8rem;
+    margin: 1rem 0;
+    position: relative;
+    display: inline-block;
+}
+
+.paket-custom .highlight {
+    color: var(--luxury-gold);
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.paket-custom .paket-tagline {
+    font-size: 1.3rem;
+    color: var(--luxury-light);
+    max-width: 700px;
+    margin: 1rem auto;
+    line-height: 1.6;
+}
+
+.paket-custom .custom-range {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    padding: 1.2rem;
+    margin-top: 1.5rem;
+    display: inline-block;
+    backdrop-filter: blur(5px);
+}
+
+/* ===== HIGHLIGHT BOXES ===== */
+.paket-custom .paket-highlight {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 4rem auto;
+    max-width: 1200px;
+}
+
+.paket-custom .highlight-box {
+    background: rgba(22, 33, 62, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: var(--luxury-border);
+    transition: var(--transition-luxury);
+    position: relative;
+    overflow: hidden;
+}
+
+.paket-custom .highlight-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: var(--transition-luxury);
+}
+
+.paket-custom .highlight-box:hover::before {
+    left: 100%;
+}
+
+.paket-custom .highlight-box:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--luxury-shadow), var(--luxury-glow);
+    border-color: var(--luxury-gold);
+}
+
+.paket-custom .highlight-box i {
+    font-size: 2.5rem;
+    background: var(--luxury-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.paket-custom .highlight-box h4 {
+    color: var(--luxury-gold);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+/* ===== DESKRIPSI PAKET LUXURY ===== */
+.paket-custom .paket-description {
+    background: rgba(26, 26, 46, 0.9);
+    padding: 3rem;
+    border-radius: 20px;
+    margin: 3rem auto;
+    max-width: 1200px;
+    border: var(--luxury-border);
+    box-shadow: var(--luxury-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.paket-custom .foto-set {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 3px solid var(--luxury-gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.paket-custom .paket-description h2 {
+    color: var(--luxury-light);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.paket-custom .paket-description h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: var(--luxury-gradient);
+}
+
+.paket-custom .paket-description h2 i {
+    color: var(--luxury-gold);
+}
+
+.paket-custom .paket-description > p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0ff;
+    margin-bottom: 2rem;
+}
+
+/* ===== FEATURE GRID LUXURY ===== */
+.paket-custom .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2.5rem;
+    margin: 3rem 0;
+}
+
+.paket-custom .feature-card {
+    background: rgba(15, 52, 96, 0.7);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border-left: 5px solid var(--luxury-gold);
+    transition: var(--transition-luxury);
+    position: relative;
+    overflow: hidden;
+}
+
+.paket-custom .feature-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.paket-custom .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--luxury-shadow);
+    border-left-color: var(--luxury-purple);
+}
+
+.paket-custom .custom-card {
+    background: linear-gradient(135deg, rgba(15, 52, 96, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+    border-left: 5px solid var(--luxury-purple);
+}
+
+.paket-custom .feature-card h3 {
+    color: var(--luxury-gold);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.paket-custom .feature-list {
+    list-style: none;
+}
+
+.paket-custom .feature-list > li {
+    margin-bottom: 1rem;
+    padding-left: 1.8rem;
+    position: relative;
+    color: #e0e0ff;
+    line-height: 1.6;
+}
+
+.paket-custom .feature-list > li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--luxury-gold);
+    font-weight: bold;
+}
+
+.paket-custom .feature-list ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.paket-custom .feature-list ul li {
+    margin-bottom: 0.5rem;
+    color: #c0c0ff;
+    font-size: 0.95rem;
+}
+
+.paket-custom .feature-list ul li::before {
+    content: '◈';
+    color: var(--luxury-purple);
+}
+
+/* ===== PRICE CALCULATOR LUXURY ===== */
+.paket-custom .price-calculator {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+    padding: 3rem;
+    border-radius: 20px;
+    margin: 3rem 0;
+    border: var(--luxury-border);
+    box-shadow: var(--luxury-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.paket-custom .price-calculator::before {
+    content: '💰';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.1;
+}
+
+.paket-custom .price-calculator h3 {
+    color: var(--luxury-light);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.paket-custom .calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.paket-custom .calc-item label {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--luxury-gold);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.paket-custom .calc-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.paket-custom .calc-option {
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition-luxury);
+    text-align: center;
+    color: #e0e0ff;
+    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.paket-custom .calc-option:hover {
+    border-color: var(--luxury-gold);
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateX(5px);
+}
+
+.paket-custom .calc-option.active {
+    background: var(--luxury-gradient);
+    color: var(--luxury-dark);
+    border-color: var(--luxury-gold);
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.paket-custom .calc-option.active::after {
+    content: '✓';
+    position: absolute;
+    right: 15px;
+    font-weight: bold;
+}
+
+.paket-custom .calc-result {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(106, 13, 173, 0.1) 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    text-align: center;
+    border: 2px solid var(--luxury-gold);
+}
+
+.paket-custom .calc-result h4 {
+    color: var(--luxury-light);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+#estimatedPrice {
+    color: var(--luxury-gold);
+    font-weight: 800;
+    font-size: 2.2rem;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.paket-custom .calc-note {
+    font-size: 0.9rem;
+    color: #c0c0ff;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* ===== TIMELINE LUXURY ===== */
+.paket-custom .custom-process {
+    background: rgba(26, 26, 46, 0.9);
+    padding: 4rem;
+    border-radius: 20px;
+    margin: 4rem auto;
+    max-width: 1200px;
+    border: var(--luxury-border);
+    box-shadow: var(--luxury-shadow);
+    position: relative;
+}
+
+.paket-custom .custom-process h2 {
+    color: var(--luxury-light);
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.paket-custom .process-timeline {
+    position: relative;
+    padding-left: 3rem;
+}
+
+.paket-custom .process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--luxury-gradient);
+    border-radius: 3px;
+}
+
+.paket-custom .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 4rem;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInRight 0.8s forwards;
+}
+
+.paket-custom .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.paket-custom .timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.paket-custom .timeline-item:nth-child(3) { animation-delay: 0.5s; }
+.paket-custom .timeline-item:nth-child(4) { animation-delay: 0.7s; }
+.paket-custom .timeline-item:nth-child(5) { animation-delay: 0.9s; }
+.paket-custom .timeline-item:nth-child(6) { animation-delay: 1.1s; }
+
+.paket-custom .timeline-number {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--luxury-gradient);
+    color: var(--luxury-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    box-shadow: var(--luxury-shadow);
+    border: 3px solid var(--luxury-dark);
+    z-index: 2;
+}
+
+.paket-custom .timeline-content {
+    background: linear-gradient(135deg, rgba(15, 52, 96, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid var(--luxury-gold);
+    transition: var(--transition-luxury);
+}
+
+.paket-custom .timeline-content:hover {
+    transform: translateX(10px);
+    box-shadow: var(--luxury-shadow);
+}
+
+.paket-custom .timeline-content h4 {
+    color: var(--luxury-gold);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== CASE STUDIES LUXURY ===== */
+.paket-custom .case-studies {
+    background: rgba(26, 26, 46, 0.9);
+    padding: 4rem;
+    border-radius: 20px;
+    margin: 4rem auto;
+    max-width: 1200px;
+    border: var(--luxury-border);
+    box-shadow: var(--luxury-shadow);
+}
+
+.paket-custom .case-studies h2 {
+    color: var(--luxury-light);
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.paket-custom .case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.paket-custom .case-item {
+    background: linear-gradient(135deg, rgba(15, 52, 96, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    transition: var(--transition-luxury);
+    position: relative;
+}
+
+.paket-custom .case-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--luxury-shadow);
+    border-color: var(--luxury-gold);
+}
+
+.paket-custom .case-header {
+    background: var(--luxury-gradient);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.paket-custom .case-header h4 {
+    color: var(--luxury-dark);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.paket-custom .case-price {
+    background: rgba(26, 26, 46, 0.9);
+    color: var(--luxury-gold);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.paket-custom .case-content {
+    padding: 2rem;
+}
+
+.paket-custom .case-content p {
+    margin-bottom: 1rem;
+    color: #e0e0ff;
+    line-height: 1.6;
+}
+
+.paket-custom .case-content strong {
+    color: var(--luxury-gold);
+}
+
+/* ===== PRICING MODEL LUXURY ===== */
+.paket-custom .pricing-model {
+    background: rgba(26, 26, 46, 0.9);
+    padding: 4rem;
+    border-radius: 20px;
+    margin: 4rem auto;
+    max-width: 1200px;
+    border: var(--luxury-border);
+    box-shadow: var(--luxury-shadow);
+}
+
+.paket-custom .pricing-model h2 {
+    color: var(--luxury-light);
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.paket-custom .model-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.paket-custom .model-card {
+    background: linear-gradient(135deg, rgba(15, 52, 96, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    transition: var(--transition-luxury);
+    position: relative;
+    overflow: hidden;
+}
+
+.paket-custom .model-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    transition: var(--transition-luxury);
+}
+
+.paket-custom .model-card:hover::before {
+    transform: rotate(180deg);
+}
+
+.paket-custom .model-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--luxury-shadow);
+    border-color: var(--luxury-gold);
+}
+
+.paket-custom .model-card h4 {
+    color: var(--luxury-gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.paket-custom .model-card p {
+    color: #c0c0ff;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.paket-custom .model-card ul {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.paket-custom .model-card li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem;
+    position: relative;
+    color: #e0e0ff;
+    font-size: 0.95rem;
+}
+
+.paket-custom .model-card li::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: var(--luxury-gold);
+    font-weight: bold;
+}
+
+/* ===== CHECKLIST LUXURY ===== */
+.paket-custom .briefing-checklist {
+    background: rgba(26, 26, 46, 0.9);
+    padding: 4rem;
+    border-radius: 20px;
+    margin: 4rem auto;
+    max-width: 1200px;
+    border: var(--luxury-border);
+    box-shadow: var(--luxury-shadow);
+}
+
+.paket-custom .briefing-checklist h2 {
+    color: var(--luxury-light);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.paket-custom .checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.paket-custom .checklist-col {
+    background: linear-gradient(135deg, rgba(15, 52, 96, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border-left: 5px solid var(--luxury-purple);
+    transition: var(--transition-luxury);
+}
+
+.paket-custom .checklist-col:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--luxury-shadow);
+    border-left-color: var(--luxury-gold);
+}
+
+.paket-custom .checklist-col h4 {
+    color: var(--luxury-gold);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.paket-custom .checklist-col ul {
+    list-style: none;
+}
+
+.paket-custom .checklist-col li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    color: #e0e0ff;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.paket-custom .checklist-col li::before {
+    content: '?';
+    position: absolute;
+    left: 0;
+    color: var(--luxury-gold);
+    font-weight: bold;
+    width: 24px;
+    height: 24px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+/* ===== CTA LUXURY ===== */
+.paket-custom .custom-cta .cta-box {
+    background: linear-gradient(135deg, rgba(106, 13, 173, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+    padding: 4rem;
+    border-radius: 20px;
+    text-align: center;
+    border: var(--luxury-border);
+    box-shadow: var(--luxury-shadow);
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 4rem auto;
+}
+
+.paket-custom .custom-cta .cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--luxury-gradient);
+}
+
+.paket-custom .custom-cta h3 {
+    font-size: 2.5rem;
+    background: var(--luxury-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.paket-custom .consultation-offer {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    position: relative;
+    border: 2px dashed var(--luxury-gold);
+    backdrop-filter: blur(5px);
+}
+
+.paket-custom .consultation-offer .offer-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #ff4081;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(255, 64, 129, 0.3);
+}
+
+.paket-custom .consultation-offer h4 {
+    color: var(--luxury-gold);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.paket-custom .offer-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.paket-custom .offer-features span {
+    background: rgba(212, 175, 55, 0.2);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--luxury-light);
+}
+
+.paket-custom .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 2.5rem 0;
+    flex-wrap: wrap;
+}
+
+.paket-custom .btn-custom {
+    background: var(--luxury-gradient);
+    color: var(--luxury-dark);
+    padding: 1.2rem 2.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: var(--transition-luxury);
+    border: none;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.paket-custom .btn-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+    background: var(--luxury-gradient-reverse);
+}
+
+.paket-custom .btn-secondary {
+    background: transparent;
+    color: var(--luxury-light);
+    border: 2px solid var(--luxury-light);
+    padding: 1.2rem 2.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: var(--transition-luxury);
+}
+
+.paket-custom .btn-secondary:hover {
+    background: var(--luxury-light);
+    color: var(--luxury-dark);
+    transform: translateY(-5px);
+}
+
+/* ===== FOOTER LUXURY ===== */
+.paket-custom footer {
+    background: rgba(26, 26, 46, 0.95);
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+    border-top: var(--luxury-border);
+    backdrop-filter: blur(10px);
+}
+
+.paket-custom .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.paket-custom .footer-col h3 {
+    color: var(--luxury-gold);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.paket-custom .footer-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--luxury-gradient);
+}
+
+.paket-custom .footer-col p {
+    color: #c0c0ff;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.paket-custom .expertise li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    color: #e0e0ff;
+    font-size: 0.95rem;
+}
+
+.paket-custom .expertise i {
+    color: var(--luxury-gold);
+    font-size: 1.1rem;
+}
+
+.paket-custom .contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0.8rem;
+    color: #e0e0ff;
+}
+
+.paket-custom .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.paket-custom .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 50%;
+    color: var(--luxury-gold);
+    transition: var(--transition-luxury);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.paket-custom .social-links a:hover {
+    background: var(--luxury-gradient);
+    color: var(--luxury-dark);
+    transform: translateY(-5px);
+    box-shadow: var(--luxury-shadow);
+}
+
+.paket-custom .copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    color: #c0c0ff;
+    font-size: 0.9rem;
+}
+
+/* ===== WHATSAPP FLOAT LUXURY ===== */
+.paket-custom .custom-float {
+    background: var(--luxury-gradient);
+    color: var(--luxury-dark);
+    padding: 15px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    box-shadow: var(--luxury-shadow);
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    font-weight: 700;
+    transition: var(--transition-luxury);
+    border: 2px solid rgba(26, 26, 46, 0.3);
+}
+
+.paket-custom .custom-float:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: var(--luxury-shadow), var(--luxury-glow);
+}
+
+/* ===== ANIMATIONS LUXURY ===== */
+@keyframes pulse {
+    0% { box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); }
+    50% { box-shadow: 0 5px 25px rgba(212, 175, 55, 0.6); }
+    100% { box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ===== RESPONSIVE LUXURY ===== */
+@media (max-width: 1200px) {
+    .paket-custom .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .paket-custom .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .paket-custom .model-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .paket-custom .checklist-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .paket-custom .paket-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .paket-custom .paket-header {
+        padding: 3rem 1.5rem;
+    }
+    
+    .paket-custom .paket-description,
+    .paket-custom .custom-process,
+    .paket-custom .case-studies,
+    .paket-custom .pricing-model,
+    .paket-custom .briefing-checklist {
+        padding: 2rem;
+        margin: 2rem 1rem;
+    }
+    
+    .paket-custom .process-timeline {
+        padding-left: 2rem;
+    }
+    
+    .paket-custom .process-timeline::before {
+        left: 25px;
+    }
+    
+    .paket-custom .timeline-item {
+        padding-left: 3rem;
+    }
+    
+    .paket-custom .timeline-number {
+        left: -40px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+    
+    .paket-custom .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .paket-custom .custom-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .paket-custom .custom-float span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .paket-custom .paket-header h1 {
+        font-size: 2rem;
+    }
+    
+    .paket-custom .paket-price {
+        font-size: 2rem;
+    }
+    
+    .paket-custom .highlight-box,
+    .paket-custom .feature-card,
+    .paket-custom .model-card,
+    .paket-custom .checklist-col {
+        padding: 1.5rem;
+    }
+    
+    .paket-custom .case-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .paket-custom .offer-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .paket-custom .custom-cta .cta-box {
+        padding: 2rem;
+    }
+}
